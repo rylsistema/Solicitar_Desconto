@@ -176,6 +176,10 @@
     .toast.show {
       opacity:1;
     }
+
+.upper {
+  text-transform: uppercase;
+}
   </style>
 </head>
 
@@ -216,7 +220,7 @@
 
         <div class="field span-9">
           <label>Nome do RCA</label>
-          <input id="nomeRca" type="text">
+          <input id="nomeRca" class="upper" type="text">
         </div>
 
         <div class="field span-4">
@@ -226,12 +230,12 @@
 
         <div class="field span-8">
           <label>Nome do Cliente</label>
-          <input id="nomeCliente" type="text">
+          <input id="nomeCliente" class="upper" type="text">
         </div>
 
         <div class="field span-4">
           <label>Prazo</label>
-          <input id="prazo" type="text">
+          <input id="prazo" class="upper" type="text">
         </div>
 
       </div>
@@ -257,7 +261,7 @@
 
             <div class="field span-8">
               <label>Nome do Produto</label>
-              <input class="nomeProduto" type="text">
+              <input class="nomeProduto" class="upper" type="text">
             </div>
 
             <div class="field span-3">
@@ -659,6 +663,10 @@ async function copyToClipboard(text){
 }
 
 document.addEventListener('input', function(e){
+
+ if(e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA'){
+    e.target.value = e.target.value.toUpperCase();
+  }
 
   if(
     e.target.classList.contains('qtd') ||
