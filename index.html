@@ -1,4 +1,3 @@
-html
 <!doctype html>
 <html lang="pt-BR">
 <head>
@@ -243,6 +242,12 @@ html
 
           <div class="produtoTitulo">Produto</div>
 
+          <div style="display:flex;justify-content:flex-end;margin-bottom:12px;">
+            <button type="button" onclick="removerProduto(this)">
+              ❌ Remover Produto
+            </button>
+          </div>
+
           <div class="grid">
 
             <div class="field span-4">
@@ -302,7 +307,9 @@ html
       </div>
 
       <div class="actions">
-        <button type="button" onclick="adicionarProduto()">+ Adicionar produto</button>
+        <button type="button" onclick="adicionarProduto()">
+          + Adicionar produto
+        </button>
       </div>
 
       <div class="grid">
@@ -327,7 +334,9 @@ html
       <div class="actions">
         <button type="button" id="limpar">Limpar</button>
         <button type="button" class="success" id="copiar">Copiar</button>
-        <button type="button" class="primary" onclick="window.print()">Imprimir</button>
+        <button type="button" class="primary" onclick="window.print()">
+          Imprimir
+        </button>
       </div>
 
     </form>
@@ -350,6 +359,7 @@ function formatBRL(v){
 }
 
 function parseBRNumber(str){
+
   if(!str) return 0;
 
   const s = String(str)
@@ -367,8 +377,11 @@ function clamp(n,a,b){
 }
 
 function showToast(msg){
+
   const t = document.getElementById('toast');
+
   t.textContent = msg;
+
   t.classList.add('show');
 
   setTimeout(()=>{
@@ -385,18 +398,26 @@ function adicionarProduto(){
   clone.querySelectorAll('input').forEach(input=>{
 
     if(input.readOnly){
-      input.value = input.classList.contains('precoPolitica') || input.classList.contains('difItem')
+
+      input.value =
+      input.classList.contains('precoPolitica') ||
+      input.classList.contains('difItem')
       ? 'R$ 0,00'
       : '0,00%';
 
     } else {
 
-      if(input.classList.contains('precoTabela') || input.classList.contains('precoNegociado')){
+      if(
+        input.classList.contains('precoTabela') ||
+        input.classList.contains('precoNegociado')
+      ){
         input.value = 'R$ 0,00';
       }
+
       else if(input.classList.contains('descPolitica')){
         input.value = '0,00%';
       }
+
       else {
         input.value = '';
       }
@@ -405,6 +426,22 @@ function adicionarProduto(){
   });
 
   document.getElementById('produtosContainer').appendChild(clone);
+}
+
+function removerProduto(botao){
+
+  const produtos = document.querySelectorAll('.produto');
+
+  if(produtos.length <= 1){
+    showToast('É necessário manter pelo menos 1 produto');
+    return;
+  }
+
+  const produto = botao.closest('.produto');
+
+  produto.remove();
+
+  recalc();
 }
 
 function recalc(){
@@ -416,39 +453,69 @@ function recalc(){
 
   produtos.forEach(produto=>{
 
-    const qtd = parseBRNumber(produto.querySelector('.qtd').value);
-    const precoTabela = parseBRNumber(produto.querySelector('.precoTabela').value);
-    const descPolitica = clamp(parseBRNumber(produto.querySelector('.descPolitica').value),0,100);
-    const precoNegociado = parseBRNumber(produto.querySelector('.precoNegociado').value);
+    const qtd =
+    parseBRNumber(produto.querySelector('.qtd').value);
 
-    const precoPolitica = precoTabela * (1 - (descPolitica / 100));
+    const precoTabela =
+    parseBRNumber(produto.querySelector('.precoTabela').value);
+
+    const descPolitica =
+    clamp(
+      parseBRNumber(produto.querySelector('.descPolitica').value),
+      0,
+      100
+    );
+
+    const precoNegociado =
+    parseBRNumber(produto.querySelector('.precoNegociado').value);
+
+    const precoPolitica =
+    precoTabela * (1 - (descPolitica / 100));
 
     let descAMais = 0;
 
     if(precoPolitica > 0){
-      descAMais = (precoPolitica - precoNegociado) / precoPolitica;
+      descAMais =
+      (precoPolitica - precoNegociado) / precoPolitica;
     }
 
     descAMais = Math.max(0, descAMais);
 
-    const totalDesc = descPolitica + (descAMais * 100);
+    const totalDesc =
+    descPolitica + (descAMais * 100);
 
-    const difItem = (precoPolitica - precoNegociado) * qtd;
+    const difItem =
+    (precoPolitica - precoNegociado) * qtd;
 
-    const totalItem = precoNegociado * qtd;
+    const totalItem =
+    precoNegociado * qtd;
 
     totalPedido += totalItem;
     totalDiferenca += difItem;
 
-    produto.querySelector('.precoPolitica').value = formatBRL(precoPolitica);
-    produto.querySelector('.descAMais').value = `${(descAMais * 100).toLocaleString('pt-BR',{minimumFractionDigits:2})}%`;
-    produto.querySelector('.totalDesconto').value = `${totalDesc.toLocaleString('pt-BR',{minimumFractionDigits:2})}%`;
-    produto.querySelector('.difItem').value = formatBRL(difItem);
+    produto.querySelector('.precoPolitica').value =
+    formatBRL(precoPolitica);
+
+    produto.querySelector('.descAMais').value =
+    `${(descAMais * 100).toLocaleString('pt-BR',{
+      minimumFractionDigits:2
+    })}%`;
+
+    produto.querySelector('.totalDesconto').value =
+    `${totalDesc.toLocaleString('pt-BR',{
+      minimumFractionDigits:2
+    })}%`;
+
+    produto.querySelector('.difItem').value =
+    formatBRL(difItem);
 
   });
 
-  document.getElementById('totalPedido').value = formatBRL(totalPedido);
-  document.getElementById('difTotal').value = formatBRL(totalDiferenca);
+  document.getElementById('totalPedido').value =
+  formatBRL(totalPedido);
+
+  document.getElementById('difTotal').value =
+  formatBRL(totalDiferenca);
 
   buildWhatsText();
 }
@@ -457,8 +524,11 @@ function buildWhatsText(){
 
   const lines = [];
 
-  const tipoDesconto = document.querySelector('input[name="tipoDesconto"]:checked').value;
-  const faturamentoPor = document.querySelector('input[name="faturamentoPor"]:checked').value;
+  const tipoDesconto =
+  document.querySelector('input[name="tipoDesconto"]:checked').value;
+
+  const faturamentoPor =
+  document.querySelector('input[name="faturamentoPor"]:checked').value;
 
   lines.push('*SOLICITAÇÃO DE DESCONTO*');
   lines.push('');
@@ -473,14 +543,18 @@ function buildWhatsText(){
     lines.push(`• *RCA:* ${codRca} - ${nomeRca}`);
   }
 
-  const codCliente = document.getElementById('codCliente').value;
-  const nomeCliente = document.getElementById('nomeCliente').value;
+  const codCliente =
+  document.getElementById('codCliente').value;
+
+  const nomeCliente =
+  document.getElementById('nomeCliente').value;
 
   if(codCliente || nomeCliente){
     lines.push(`• *Cliente:* ${codCliente} - ${nomeCliente}`);
   }
 
-  const prazo = document.getElementById('prazo').value;
+  const prazo =
+  document.getElementById('prazo').value;
 
   if(prazo){
     lines.push(`• *Prazo:* ${prazo}`);
@@ -489,50 +563,79 @@ function buildWhatsText(){
   lines.push('');
   lines.push('*Produtos*');
 
-  const produtos = document.querySelectorAll('.produto');
+  const produtos =
+  document.querySelectorAll('.produto');
 
   produtos.forEach(p=>{
 
-    const cod = p.querySelector('.codProduto').value || '';
-    const nome = p.querySelector('.nomeProduto').value || '';
-    const qtd = parseBRNumber(p.querySelector('.qtd').value);
+    const cod =
+    p.querySelector('.codProduto').value || '';
 
-    const precoTabela = parseBRNumber(p.querySelector('.precoTabela').value);
-    const descPolitica = clamp(parseBRNumber(p.querySelector('.descPolitica').value),0,100);
-    const precoNegociado = parseBRNumber(p.querySelector('.precoNegociado').value);
+    const nome =
+    p.querySelector('.nomeProduto').value || '';
 
-    const precoPolitica = precoTabela * (1 - (descPolitica / 100));
+    const qtd =
+    parseBRNumber(p.querySelector('.qtd').value);
+
+    const precoTabela =
+    parseBRNumber(p.querySelector('.precoTabela').value);
+
+    const descPolitica =
+    clamp(
+      parseBRNumber(p.querySelector('.descPolitica').value),
+      0,
+      100
+    );
+
+    const precoNegociado =
+    parseBRNumber(p.querySelector('.precoNegociado').value);
+
+    const precoPolitica =
+    precoTabela * (1 - (descPolitica / 100));
 
     let descAMais = 0;
 
     if(precoPolitica > 0){
-      descAMais = (precoPolitica - precoNegociado) / precoPolitica;
+      descAMais =
+      (precoPolitica - precoNegociado) / precoPolitica;
     }
 
     descAMais = Math.max(0, descAMais);
 
-    const totalDesc = descPolitica + (descAMais * 100);
-    const difItem = (precoPolitica - precoNegociado) * qtd;
+    const totalDesc =
+    descPolitica + (descAMais * 100);
+
+    const difItem =
+    (precoPolitica - precoNegociado) * qtd;
 
     lines.push('');
     lines.push(`• ${cod} - ${nome}`);
     lines.push(`Qtd: ${qtd}`);
     lines.push(`Preço de Tabela: ${formatBRL(precoTabela)}`);
-    lines.push(`% Desconto Política: ${descPolitica.toLocaleString('pt-BR',{minimumFractionDigits:2})}%`);
+    lines.push(`% Desconto Política: ${descPolitica.toLocaleString('pt-BR',{
+      minimumFractionDigits:2
+    })}%`);
     lines.push(`Preço da Política: ${formatBRL(precoPolitica)}`);
     lines.push(`Preço Negociado: ${formatBRL(precoNegociado)}`);
-    lines.push(`Desc. a Mais: ${(descAMais * 100).toLocaleString('pt-BR',{minimumFractionDigits:2})}%`);
-    lines.push(`Total de Desconto: ${totalDesc.toLocaleString('pt-BR',{minimumFractionDigits:2})}%`);
+    lines.push(`Desc. a Mais: ${(descAMais * 100).toLocaleString('pt-BR',{
+      minimumFractionDigits:2
+    })}%`);
+    lines.push(`Total de Desconto: ${totalDesc.toLocaleString('pt-BR',{
+      minimumFractionDigits:2
+    })}%`);
     lines.push(`Diferença Total do Item: ${formatBRL(difItem)}`);
 
   });
 
   lines.push('');
   lines.push('*Totais*');
+
   lines.push(`• *Total valor do pedido:* ${document.getElementById('totalPedido').value}`);
+
   lines.push(`• *Diferença de preço total:* ${document.getElementById('difTotal').value}`);
 
-  document.getElementById('whatsPreview').value = lines.join('\n');
+  document.getElementById('whatsPreview').value =
+  lines.join('\n');
 }
 
 async function copyToClipboard(text){
@@ -543,9 +646,11 @@ async function copyToClipboard(text){
   }
 
   const ta = document.createElement('textarea');
+
   ta.value = text;
 
   document.body.appendChild(ta);
+
   ta.select();
 
   document.execCommand('copy');
@@ -575,15 +680,23 @@ document.addEventListener('input', function(e){
 
 document.addEventListener('blur', function(e){
 
-  if(e.target.classList.contains('precoTabela') || e.target.classList.contains('precoNegociado')){
-    e.target.value = formatBRL(parseBRNumber(e.target.value));
+  if(
+    e.target.classList.contains('precoTabela') ||
+    e.target.classList.contains('precoNegociado')
+  ){
+    e.target.value =
+    formatBRL(parseBRNumber(e.target.value));
   }
 
   if(e.target.classList.contains('descPolitica')){
 
-    const valor = clamp(parseBRNumber(e.target.value),0,100);
+    const valor =
+    clamp(parseBRNumber(e.target.value),0,100);
 
-    e.target.value = `${valor.toLocaleString('pt-BR',{minimumFractionDigits:2})}%`;
+    e.target.value =
+    `${valor.toLocaleString('pt-BR',{
+      minimumFractionDigits:2
+    })}%`;
   }
 
   recalc();
@@ -594,11 +707,14 @@ document.getElementById('copiar').addEventListener('click', async ()=>{
 
   try {
 
-    await copyToClipboard(document.getElementById('whatsPreview').value);
+    await copyToClipboard(
+      document.getElementById('whatsPreview').value
+    );
 
     showToast('Texto copiado!');
 
   } catch(e){
+
     showToast('Erro ao copiar');
   }
 
@@ -614,4 +730,3 @@ recalc();
 
 </body>
 </html>
-
