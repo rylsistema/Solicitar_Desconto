@@ -1,0 +1,658 @@
+# Sistema de Solicitação de Desconto
+
+```html
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Solicitação de desconto</title>
+
+  <style>
+    :root {
+      --bg:#0b1220;
+      --card:#111a2e;
+      --muted:#9fb0d0;
+      --text:#eef2ff;
+      --line:#223153;
+      --accent:#4f8cff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin:0;
+      font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 20% 10%, #16254a, transparent), var(--bg);
+      color: var(--text);
+    }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 28px auto;
+      padding: 0 16px;
+    }
+
+    .title {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:14px;
+    }
+
+    h1 {
+      margin:0;
+      font-size:24px;
+    }
+
+    .card {
+      background: rgba(17, 26, 46, .92);
+      border:1px solid rgba(34,49,83,.9);
+      border-radius:18px;
+      padding:18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+
+    .grid {
+      display:grid;
+      grid-template-columns: repeat(12,1fr);
+      gap:12px;
+    }
+
+    .field {
+      grid-column: span 12;
+    }
+
+    @media (min-width:820px){
+      .span-3 { grid-column: span 3; }
+      .span-4 { grid-column: span 4; }
+      .span-6 { grid-column: span 6; }
+      .span-8 { grid-column: span 8; }
+      .span-9 { grid-column: span 9; }
+      .span-12 { grid-column: span 12; }
+    }
+
+    label {
+      display:block;
+      font-size:12px;
+      color: var(--muted);
+      margin:0 0 6px 2px;
+    }
+
+    input, textarea {
+      width:100%;
+      background:#0f1830;
+      border:1px solid var(--line);
+      color:var(--text);
+      border-radius:12px;
+      padding:11px 12px;
+      outline:none;
+      font-size:14px;
+    }
+
+    textarea {
+      min-height:160px;
+      resize:vertical;
+    }
+
+    input[readonly] {
+      background:#0c1428;
+    }
+
+    .radioRow {
+      display:flex;
+      gap:12px;
+      padding:12px;
+      border-radius:12px;
+      background:#0f1830;
+      border:1px solid var(--line);
+    }
+
+    .radioRow label {
+      margin:0;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      color:var(--text);
+      font-size:14px;
+    }
+
+    .radioRow input {
+      width:auto;
+    }
+
+    .produto {
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:14px;
+      margin-top:18px;
+      background: rgba(15,24,48,.45);
+    }
+
+    .produtoTitulo {
+      font-size:15px;
+      font-weight:700;
+      margin-bottom:12px;
+      color:#cfe0ff;
+    }
+
+    .actions {
+      display:flex;
+      gap:10px;
+      justify-content:flex-end;
+      margin-top:18px;
+      flex-wrap:wrap;
+    }
+
+    button {
+      border:1px solid var(--line);
+      background:#0f1830;
+      color:var(--text);
+      padding:10px 14px;
+      border-radius:12px;
+      cursor:pointer;
+      font-weight:600;
+    }
+
+    button.primary {
+      background: rgba(79,140,255,.18);
+      border-color: rgba(79,140,255,.55);
+    }
+
+    button.success {
+      background: rgba(57,214,156,.12);
+      border-color: rgba(57,214,156,.45);
+    }
+
+    .toast {
+      position:fixed;
+      right:16px;
+      bottom:16px;
+      background:#0f1830;
+      border:1px solid var(--line);
+      padding:10px 12px;
+      border-radius:12px;
+      opacity:0;
+      transition:.2s;
+    }
+
+    .toast.show {
+      opacity:1;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+  <div class="title">
+    <h1>Solicitação de desconto</h1>
+  </div>
+
+  <div class="card">
+
+    <form id="form">
+
+      <div class="grid">
+
+        <div class="field span-6">
+          <label>Tipo de desconto</label>
+          <div class="radioRow">
+            <label><input type="radio" name="tipoDesconto" value="Flex" checked> Flex</label>
+            <label><input type="radio" name="tipoDesconto" value="Conta Corrente"> Conta Corrente</label>
+          </div>
+        </div>
+
+        <div class="field span-6">
+          <label>Faturamento por</label>
+          <div class="radioRow">
+            <label><input type="radio" name="faturamentoPor" value="Goiás" checked> Goiás</label>
+            <label><input type="radio" name="faturamentoPor" value="Tocantins"> Tocantins</label>
+          </div>
+        </div>
+
+        <div class="field span-3">
+          <label>Código do RCA</label>
+          <input id="codRca" type="text">
+        </div>
+
+        <div class="field span-9">
+          <label>Nome do RCA</label>
+          <input id="nomeRca" type="text">
+        </div>
+
+        <div class="field span-4">
+          <label>Código do Cliente</label>
+          <input id="codCliente" type="text">
+        </div>
+
+        <div class="field span-8">
+          <label>Nome do Cliente</label>
+          <input id="nomeCliente" type="text">
+        </div>
+
+        <div class="field span-4">
+          <label>Prazo</label>
+          <input id="prazo" type="text">
+        </div>
+
+      </div>
+
+      <div id="produtosContainer">
+
+        <div class="produto">
+
+          <div class="produtoTitulo">Produto</div>
+
+<div style="display:flex;justify-content:flex-end;margin-bottom:12px;">
+  <button type="button" onclick="removerProduto(this)">
+    ❌ Remover Produto
+  </button>
+</div>
+          <div class="grid">
+
+            <div class="field span-4">
+              <label>Código do Produto</label>
+              <input class="codProduto" type="text">
+            </div>
+
+            <div class="field span-8">
+              <label>Nome do Produto</label>
+              <input class="nomeProduto" type="text">
+            </div>
+
+            <div class="field span-3">
+              <label>Quantidade</label>
+              <input class="qtd" type="number">
+            </div>
+
+            <div class="field span-3">
+              <label>Preço de Tabela</label>
+              <input class="precoTabela" type="text" value="R$ 0,00">
+            </div>
+
+            <div class="field span-3">
+              <label>% desconto política</label>
+              <input class="descPolitica" type="text" value="0,00%">
+            </div>
+
+            <div class="field span-3">
+              <label>Preço da política</label>
+              <input class="precoPolitica" type="text" readonly value="R$ 0,00">
+            </div>
+
+            <div class="field span-3">
+              <label>Preço negociado</label>
+              <input class="precoNegociado" type="text" value="R$ 0,00">
+            </div>
+
+            <div class="field span-3">
+              <label>Desc. a mais</label>
+              <input class="descAMais" type="text" readonly value="0,00%">
+            </div>
+
+            <div class="field span-3">
+              <label>Total de desconto</label>
+              <input class="totalDesconto" type="text" readonly value="0,00%">
+            </div>
+
+            <div class="field span-3">
+              <label>Diferença item</label>
+              <input class="difItem" type="text" readonly value="R$ 0,00">
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="actions">
+        <button type="button" onclick="adicionarProduto()">+ Adicionar produto</button>
+      </div>
+
+      <div class="grid">
+
+        <div class="field span-6">
+          <label>Total Valor do Pedido</label>
+          <input id="totalPedido" readonly value="R$ 0,00">
+        </div>
+
+        <div class="field span-6">
+          <label>Diferença de Preço Total</label>
+          <input id="difTotal" readonly value="R$ 0,00">
+        </div>
+
+        <div class="field span-12">
+          <label>Texto formatado (prévia)</label>
+          <textarea id="whatsPreview" readonly></textarea>
+        </div>
+
+      </div>
+
+      <div class="actions">
+        <button type="button" id="limpar">Limpar</button>
+        <button type="button" class="success" id="copiar">Copiar</button>
+        <button type="button" class="primary" onclick="window.print()">Imprimir</button>
+      </div>
+
+    </form>
+
+  </div>
+
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script>
+
+const brl = new Intl.NumberFormat('pt-BR', {
+  style:'currency',
+  currency:'BRL'
+});
+
+function formatBRL(v){
+  return brl.format(Number(v || 0));
+}
+
+function parseBRNumber(str){
+  if(!str) return 0;
+
+  const s = String(str)
+    .replace(/R\$/g,'')
+    .replace(/\./g,'')
+    .replace(',','.')
+    .replace('%','')
+    .trim();
+
+  return Number(s) || 0;
+}
+
+function clamp(n,a,b){
+  return Math.min(Math.max(n,a),b);
+}
+
+function showToast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+
+  setTimeout(()=>{
+    t.classList.remove('show');
+  },1800);
+}
+
+function adicionarProduto(){
+
+function removerProduto(botao){
+
+  const produtos = document.querySelectorAll('.produto');
+
+  // impede remover o último produto
+  if(produtos.length <= 1){
+    showToast('É necessário manter pelo menos 1 produto');
+    return;
+  }
+
+  const produto = botao.closest('.produto');
+
+  produto.remove();
+
+  recalc();
+
+}
+
+  const original = document.querySelector('.produto');
+
+  const clone = original.cloneNode(true);
+
+  clone.querySelectorAll('input').forEach(input=>{
+
+    if(input.readOnly){
+      input.value = input.classList.contains('precoPolitica') || input.classList.contains('difItem')
+      ? 'R$ 0,00'
+      : '0,00%';
+
+    } else {
+
+      if(input.classList.contains('precoTabela') || input.classList.contains('precoNegociado')){
+        input.value = 'R$ 0,00';
+      }
+      else if(input.classList.contains('descPolitica')){
+        input.value = '0,00%';
+      }
+      else {
+        input.value = '';
+      }
+    }
+
+  });
+
+  document.getElementById('produtosContainer').appendChild(clone);
+}
+
+function recalc(){
+
+  let totalPedido = 0;
+  let totalDiferenca = 0;
+
+  const produtos = document.querySelectorAll('.produto');
+
+  produtos.forEach(produto=>{
+
+    const qtd = parseBRNumber(produto.querySelector('.qtd').value);
+    const precoTabela = parseBRNumber(produto.querySelector('.precoTabela').value);
+    const descPolitica = clamp(parseBRNumber(produto.querySelector('.descPolitica').value),0,100);
+    const precoNegociado = parseBRNumber(produto.querySelector('.precoNegociado').value);
+
+    const precoPolitica = precoTabela * (1 - (descPolitica / 100));
+
+    let descAMais = 0;
+
+    if(precoPolitica > 0){
+      descAMais = (precoPolitica - precoNegociado) / precoPolitica;
+    }
+
+    descAMais = Math.max(0, descAMais);
+
+    const totalDesc = descPolitica + (descAMais * 100);
+
+    const difItem = (precoPolitica - precoNegociado) * qtd;
+
+    const totalItem = precoNegociado * qtd;
+
+    totalPedido += totalItem;
+    totalDiferenca += difItem;
+
+    produto.querySelector('.precoPolitica').value = formatBRL(precoPolitica);
+    produto.querySelector('.descAMais').value = `${(descAMais * 100).toLocaleString('pt-BR',{minimumFractionDigits:2})}%`;
+    produto.querySelector('.totalDesconto').value = `${totalDesc.toLocaleString('pt-BR',{minimumFractionDigits:2})}%`;
+    produto.querySelector('.difItem').value = formatBRL(difItem);
+
+  });
+
+  document.getElementById('totalPedido').value = formatBRL(totalPedido);
+  document.getElementById('difTotal').value = formatBRL(totalDiferenca);
+
+  buildWhatsText();
+}
+
+function buildWhatsText(){
+
+  const lines = [];
+
+  const tipoDesconto = document.querySelector('input[name="tipoDesconto"]:checked').value;
+  const faturamentoPor = document.querySelector('input[name="faturamentoPor"]:checked').value;
+
+  lines.push('*SOLICITAÇÃO DE DESCONTO*');
+  lines.push('');
+
+  lines.push(`• *Tipo de desconto:* ${tipoDesconto}`);
+  lines.push(`• *Faturamento por:* ${faturamentoPor}`);
+
+  const codRca = document.getElementById('codRca').value;
+  const nomeRca = document.getElementById('nomeRca').value;
+
+  if(codRca || nomeRca){
+    lines.push(`• *RCA:* ${codRca} - ${nomeRca}`);
+  }
+
+  const codCliente = document.getElementById('codCliente').value;
+  const nomeCliente = document.getElementById('nomeCliente').value;
+
+  if(codCliente || nomeCliente){
+    lines.push(`• *Cliente:* ${codCliente} - ${nomeCliente}`);
+  }
+
+  const prazo = document.getElementById('prazo').value;
+
+  if(prazo){
+    lines.push(`• *Prazo:* ${prazo}`);
+  }
+
+  lines.push('');
+  lines.push('*Produtos*');
+
+  const produtos = document.querySelectorAll('.produto');
+
+  produtos.forEach(p=>{
+
+    const cod = p.querySelector('.codProduto').value || '';
+    const nome = p.querySelector('.nomeProduto').value || '';
+    const qtd = parseBRNumber(p.querySelector('.qtd').value);
+
+    const precoTabela = parseBRNumber(p.querySelector('.precoTabela').value);
+    const descPolitica = clamp(parseBRNumber(p.querySelector('.descPolitica').value),0,100);
+    const precoNegociado = parseBRNumber(p.querySelector('.precoNegociado').value);
+
+    const precoPolitica = precoTabela * (1 - (descPolitica / 100));
+
+    let descAMais = 0;
+
+    if(precoPolitica > 0){
+      descAMais = (precoPolitica - precoNegociado) / precoPolitica;
+    }
+
+    descAMais = Math.max(0, descAMais);
+
+    const totalDesc = descPolitica + (descAMais * 100);
+    const difItem = (precoPolitica - precoNegociado) * qtd;
+
+    lines.push('');
+    lines.push(`• ${cod} - ${nome}`);
+    lines.push(`Qtd: ${qtd}`);
+    lines.push(`Preço de Tabela: ${formatBRL(precoTabela)}`);
+    lines.push(`% Desconto Política: ${descPolitica.toLocaleString('pt-BR',{minimumFractionDigits:2})}%`);
+    lines.push(`Preço da Política: ${formatBRL(precoPolitica)}`);
+    lines.push(`Preço Negociado: ${formatBRL(precoNegociado)}`);
+    lines.push(`Desc. a Mais: ${(descAMais * 100).toLocaleString('pt-BR',{minimumFractionDigits:2})}%`);
+    lines.push(`Total de Desconto: ${totalDesc.toLocaleString('pt-BR',{minimumFractionDigits:2})}%`);
+    lines.push(`Diferença Total do Item: ${formatBRL(difItem)}`);
+
+  });
+
+  lines.push('');
+  lines.push('*Totais*');
+  lines.push(`• *Total valor do pedido:* ${document.getElementById('totalPedido').value}`);
+  lines.push(`• *Diferença de preço total:* ${document.getElementById('difTotal').value}`);
+
+  document.getElementById('whatsPreview').value = lines.join('\n');
+}
+
+async function copyToClipboard(text){
+
+  if(navigator.clipboard && window.isSecureContext){
+    await navigator.clipboard.writeText(text);
+    return;
+  }
+
+  const ta = document.createElement('textarea');
+  ta.value = text;
+
+  document.body.appendChild(ta);
+  ta.select();
+
+  document.execCommand('copy');
+
+  document.body.removeChild(ta);
+}
+
+document.addEventListener('input', function(e){
+
+  if(
+    e.target.classList.contains('qtd') ||
+    e.target.classList.contains('precoTabela') ||
+    e.target.classList.contains('precoNegociado') ||
+    e.target.classList.contains('descPolitica') ||
+    e.target.classList.contains('codProduto') ||
+    e.target.classList.contains('nomeProduto') ||
+    e.target.id === 'codRca' ||
+    e.target.id === 'nomeRca' ||
+    e.target.id === 'codCliente' ||
+    e.target.id === 'nomeCliente' ||
+    e.target.id === 'prazo'
+  ){
+    recalc();
+  }
+
+});
+
+document.addEventListener('blur', function(e){
+
+  if(e.target.classList.contains('precoTabela') || e.target.classList.contains('precoNegociado')){
+    e.target.value = formatBRL(parseBRNumber(e.target.value));
+  }
+
+  if(e.target.classList.contains('descPolitica')){
+
+    const valor = clamp(parseBRNumber(e.target.value),0,100);
+
+    e.target.value = `${valor.toLocaleString('pt-BR',{minimumFractionDigits:2})}%`;
+  }
+
+  recalc();
+
+}, true);
+
+document.getElementById('copiar').addEventListener('click', async ()=>{
+
+  try {
+
+    await copyToClipboard(document.getElementById('whatsPreview').value);
+
+    showToast('Texto copiado!');
+
+  } catch(e){
+    showToast('Erro ao copiar');
+  }
+
+});
+
+document.getElementById('limpar').addEventListener('click', ()=>{
+  location.reload();
+});
+function removerProduto(botao){
+
+  const produtos = document.querySelectorAll('.produto');
+
+  if(produtos.length <= 1){
+    showToast('É necessário manter pelo menos 1 produto');
+    return;
+  }
+
+  const produto = botao.closest('.produto');
+
+  produto.remove();
+
+  recalc();
+
+}
+
+recalc();
+
+</script>
+
+</body>
+</html>
+```

@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Solicitação de desconto</title>
+  <style>
+    :root { --bg:#0b1220; --card:#111a2e; --muted:#9fb0d0; --text:#eef2ff; --line:#223153; --accent:#4f8cff; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 20% 10%, #16254a, transparent), var(--bg);
+      color: var(--text);
+    }
+    .wrap { max-width: 980px; margin: 28px auto; padding: 0 16px; }
+    .title { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom: 14px; }
+    h1 { font-size: 24px; margin: 0; letter-spacing: .2px; }
+    .card {
+      background: rgba(17, 26, 46, .92);
+      border: 1px solid rgba(34, 49, 83, .9);
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      padding: 18px;
+    }
+    .grid { display:grid; grid-template-columns: repeat(12, 1fr); gap: 12px; }
+    .field { grid-column: span 12; }
+    @media (min-width: 820px) {
+      .span-6 { grid-column: span 6; }
+      .span-4 { grid-column: span 4; }
+      .span-3 { grid-column: span 3; }
+      .span-8 { grid-column: span 8; }
+      .span-9 { grid-column: span 9; }
+      .span-2 { grid-column: span 2; }
+      .span-10 { grid-column: span 10; }
+    }
+    label { display:block; font-size: 12px; color: var(--muted); margin: 0 0 6px 2px; }
+    input, select, textarea {
+      width: 100%;
+      background: #0f1830;
+      border: 1px solid var(--line);
+      color: var(--text);
+      border-radius: 12px;
+      padding: 11px 12px;
+      outline: none;
+      font-size: 14px;
+    }
+    textarea { min-height: 120px; resize: vertical; }
+    input:focus, select:focus, textarea:focus { border-color: rgba(79, 140, 255, .85); box-shadow: 0 0 0 3px rgba(79,140,255,.15); }
+    input[readonly], textarea[readonly] { opacity: .95; background: #0c1428; }
+    .radioRow {
+      display:flex; flex-wrap:wrap; gap:10px; padding: 10px 12px;
+      background:#0f1830; border:1px solid var(--line); border-radius: 12px;
+    }
+    .radioRow label { margin:0; color: var(--text); font-size: 14px; display:flex; gap:8px; align-items:center; }
+    .radioRow input { width:auto; }
+    .hint { font-size: 12px; color: var(--muted); margin-top: 10px; line-height: 1.45; }
+    .actions { display:flex; gap:10px; justify-content:flex-end; margin-top: 14px; flex-wrap: wrap; }
+    button {
+      border: 1px solid var(--line);
+      background: #0f1830;
+      color: var(--text);
+      padding: 10px 14px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    button.primary { background: rgba(79,140,255,.18); border-color: rgba(79,140,255,.55); }
+    button.success { background: rgba(57, 214, 156, .12); border-color: rgba(57, 214, 156, .45); }
+    button:hover { filter: brightness(1.08); }
+    .toast {
+      position: fixed; right: 16px; bottom: 16px;
+      background: rgba(15, 24, 48, .96);
+      border: 1px solid rgba(34,49,83,.9);
+      padding: 10px 12px;
+      border-radius: 12px;
+      color: var(--text);
+      box-shadow: 0 10px 28px rgba(0,0,0,.3);
+      opacity: 0; transform: translateY(10px);
+      transition: opacity .18s ease, transform .18s ease;
+      pointer-events: none;
+      font-size: 13px;
+    }
+    .toast.show { opacity: 1; transform: translateY(0); }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="title">
+      <h1>Solicitação de desconto</h1>
+      <div style="color:var(--muted);font-size:12px;">Botão “Copiar” gera texto pronto p/ WhatsApp</div>
+    </div>
+
+    <div class="card">
+      <form id="form" autocomplete="off">
+        <div class="grid">
+          <!-- Linha 1 -->
+          <div class="field span-6">
+            <label>Tipo de desconto</label>
+            <div class="radioRow" role="group" aria-label="Tipo de desconto">
+              <label><input type="radio" name="tipoDesconto" value="flex" checked /> Flex</label>
+              <label><input type="radio" name="tipoDesconto" value="conta_corrente" /> Conta Corrente</label>
+            </div>
+          </div>
+
+          <div class="field span-6">
+            <label>Faturamento por:</label>
+            <div class="radioRow" role="group" aria-label="Faturamento por">
+              <label><input type="radio" name="faturamentoPor" value="goias" checked /> Goiás</label>
+              <label><input type="radio" name="faturamentoPor" value="tocantins" /> Tocantins</label>
+            </div>
+          </div>
+
+          <!-- Linha 2 -->
+          <div class="field span-3">
+            <label>Código do RCA</label>
+            <input id="codRca" type="text" inputmode="numeric" placeholder="Ex.: 123" />
+          </div>
+
+          <div class="field span-9">
+            <label>Nome do RCA</label>
+            <input id="nomeRca" type="text" placeholder="Digite o nome" />
+          </div>
+
+          <!-- Linha 3 -->
+          <div class="field span-4">
+            <label>Código do Cliente</label>
+            <input id="codCliente" type="text" inputmode="numeric" placeholder="Ex.: 456789" />
+          </div>
+
+          <div class="field span-8">
+            <label>Nome do Cliente</label>
+            <input id="nomeCliente" type="text" placeholder="Digite o nome do cliente" />
+          </div>
+
+          <!-- Linha 4: Prazo abaixo -->
+          <div class="field span-4">
+            <label>Prazo</label>
+            <input id="prazo" type="text" placeholder="Ex.: 28 dias / 30/60" />
+          </div>
+
+          <!-- Linha 5: Código do produto na mesma linha do nome do produto -->
+          <div class="field span-4">
+            <label>Código do produto</label>
+            <input id="codProduto" type="text" placeholder="Ex.: 78910" />
+          </div>
+
+          <div class="field span-8">
+            <label>Nome do produto</label>
+            <input id="nomeProduto" type="text" placeholder="Digite o nome do produto" />
+          </div>
+
+          <!-- Linha 6 -->
+          <div class="field span-3">
+            <label>Quantidade</label>
+            <input id="qtd" type="number" min="0" step="1" placeholder="0" />
+          </div>
+
+          <div class="field span-3">
+            <label>Preço de Tabela</label>
+            <input id="precoTabela" type="text" inputmode="decimal" placeholder="R$ 0,00" />
+          </div>
+
+          <div class="field span-3">
+            <label>% desconto política</label>
+            <input id="descPolitica" type="text" inputmode="decimal" placeholder="0,00%" />
+          </div>
+
+          <div class="field span-3">
+            <label>Preço da política (calculado)</label>
+            <input id="precoPolitica" type="text" readonly value="R$ 0,00" />
+          </div>
+
+          <!-- Linha 7 -->
+          <div class="field span-3">
+            <label>Preço negociado</label>
+            <input id="precoNegociado" type="text" inputmode="decimal" placeholder="R$ 0,00" />
+          </div>
+
+          <div class="field span-3">
+            <label>Desconto a mais (calculado)</label>
+            <input id="descAMais" type="text" readonly value="0,00%" />
+          </div>
+
+          <div class="field span-3">
+            <label>Total de desconto (calculado)</label>
+            <input id="totalDesconto" type="text" readonly value="0,00%" />
+          </div>
+
+          <div class="field span-3">
+            <label>Diferença de preço do item (calculado)</label>
+            <input id="difItem" type="text" readonly value="R$ 0,00" />
+          </div>
+
+          <!-- Últimas linhas: Total Pedido e Diferença Total -->
+          <div class="field span-6">
+            <label>Total Valor do Pedido (calculado)</label>
+            <input id="totalPedido" type="text" readonly value="R$ 0,00" />
+          </div>
+
+          <div class="field span-6">
+            <label>Diferença de Preço Total (calculado)</label>
+            <input id="difTotal" type="text" readonly value="R$ 0,00" />
+          </div>
+
+          <!-- Texto para WhatsApp (preview) -->
+          <div class="field">
+            <label>Texto formatado (prévia)</label>
+            <textarea id="whatsPreview" class="mono" readonly></textarea>
+            <div class="hint">
+              Regras:
+              <br>• <b>Preço da política</b> = Preço de tabela × (1 − % política)
+              <br>• <b>Total Valor do Pedido</b> = Preço negociado × Quantidade
+              <br>• <b>Desconto a mais</b> = (Preço política − Preço negociado) ÷ Preço política (se negociado &lt; política)
+              <br>• <b>Total de desconto</b> = % política + desconto a mais
+              <br>• <b>Diferença do item</b> = (Preço política − Preço negociado) × Quantidade
+              <br>• <b>Diferença Total</b> = Diferença do item (1 item neste formulário)
+            </div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button type="button" id="limpar">Limpar</button>
+          <button type="button" class="success" id="copiar">Copiar</button>
+          <button type="button" class="primary" id="imprimir">Imprimir</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
+
+  <script>
+    const brl = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
+    const el = (id) => document.getElementById(id);
+
+    function showToast(msg) {
+      const t = el('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      clearTimeout(showToast._timer);
+      showToast._timer = setTimeout(() => t.classList.remove('show'), 1700);
+    }
+
+    function parseBRNumber(str) {
+      if (str == null) return 0;
+      const s = String(str).trim();
+      if (!s) return 0;
+      const cleaned = s.replace(/[^\d,.\-]/g, '');
+      const normalized = cleaned.replace(/\./g, '').replace(',', '.');
+      const n = Number(normalized);
+      return Number.isFinite(n) ? n : 0;
+    }
+
+    function formatBRL(n) {
+      const x = Number.isFinite(n) ? n : 0;
+      return brl.format(x);
+    }
+
+    function clamp(n, a, b) { return Math.min(Math.max(n, a), b); }
+
+    function maskCurrencyInput(input) {
+      const n = parseBRNumber(input.value);
+      input.value = formatBRL(n);
+    }
+
+    function maskPercentInput(input) {
+      const n = parseBRNumber(input.value);
+      const p = clamp(n, 0, 100);
+      input.value = p.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + '%';
+    }
+
+    function getRadioValue(name) {
+      const checked = document.querySelector(`input[name="${name}"]:checked`);
+      return checked ? checked.value : '';
+    }
+
+    function labelFromRadioValue(name, value) {
+      const map = {
+        tipoDesconto: { flex: 'Flex', conta_corrente: 'Conta Corrente' },
+        faturamentoPor: { goias: 'Goiás', tocantins: 'Tocantins' }
+      };
+      return (map[name] && map[name][value]) ? map[name][value] : value;
+    }
+
+    function getFormData() {
+      const quantidade = Math.max(0, Math.floor(parseBRNumber(el('qtd').value)));
+      const precoTabela = parseBRNumber(el('precoTabela').value);
+      const descPoliticaPct = clamp(parseBRNumber(el('descPolitica').value), 0, 100); // %
+      const precoNegociado = parseBRNumber(el('precoNegociado').value);
+
+      const precoPolitica = precoTabela * (1 - (descPoliticaPct / 100));
+
+      let descAMaisRate = 0;
+      if (precoPolitica > 0) descAMaisRate = (precoPolitica - precoNegociado) / precoPolitica;
+      descAMaisRate = Math.max(0, descAMaisRate); // não deixa negativo
+
+      const totalDescontoPct = clamp(descPoliticaPct + (descAMaisRate * 100), 0, 100);
+
+      const difItem = (precoPolitica - precoNegociado) * quantidade;
+      const totalPedido = precoNegociado * quantidade;
+
+      return {
+        tipoDesconto: labelFromRadioValue('tipoDesconto', getRadioValue('tipoDesconto')),
+        faturamentoPor: labelFromRadioValue('faturamentoPor', getRadioValue('faturamentoPor')),
+        codRca: el('codRca').value.trim(),
+        nomeRca: el('nomeRca').value.trim(),
+        codCliente: el('codCliente').value.trim(),
+        nomeCliente: el('nomeCliente').value.trim(),
+        prazo: el('prazo').value.trim(),
+        codProduto: el('codProduto').value.trim(),
+        nomeProduto: el('nomeProduto').value.trim(),
+        quantidade,
+        precoTabela,
+        descPoliticaPct,
+        precoPolitica,
+        precoNegociado,
+        descAMaisRate,
+        totalDescontoPct,
+        difItem,
+        totalPedido
+      };
+    }
+
+    function recalc() {
+      const d = getFormData();
+
+      el('precoPolitica').value = formatBRL(d.precoPolitica);
+      el('descAMais').value = (d.descAMaisRate * 100).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + '%';
+      el('totalDesconto').value = d.totalDescontoPct.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + '%';
+      el('difItem').value = formatBRL(d.difItem);
+
+      el('totalPedido').value = formatBRL(d.totalPedido);
+      el('difTotal').value = formatBRL(d.difItem); // 1 item
+
+      el('whatsPreview').value = buildWhatsText(d);
+    }
+
+    function buildWhatsText(d) {
+      // WhatsApp aceita *negrito*, _itálico_, ~tachado~, ```monospace```
+      const lines = [];
+
+      lines.push("*SOLICITAÇÃO DE DESCONTO*");
+      lines.push("");
+      lines.push(`• *Tipo de desconto:* ${d.tipoDesconto}`);
+      lines.push(`• *Faturamento por:* ${d.faturamentoPor}`);
+
+      if (d.codRca || d.nomeRca) lines.push(`• *RCA:* ${[d.codRca, d.nomeRca].filter(Boolean).join(" - ")}`);
+      if (d.codCliente || d.nomeCliente) lines.push(`• *Cliente:* ${[d.codCliente, d.nomeCliente].filter(Boolean).join(" - ")}`);
+      if (d.prazo) lines.push(`• *Prazo:* ${d.prazo}`);
+
+      lines.push("");
+      lines.push("*Produto*");
+      lines.push(`• ${[d.codProduto, d.nomeProduto].filter(Boolean).join(" - ") || "-"}`);
+      lines.push(`• *Qtd:* ${d.quantidade || 0}`);
+      lines.push(`• *Preço Tabela:* ${formatBRL(d.precoTabela)}`);
+      lines.push(`• *% Desc. Política:* ${d.descPoliticaPct.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%`);
+      lines.push(`• *Preço Política:* ${formatBRL(d.precoPolitica)}`);
+      lines.push(`• *Preço Negociado:* ${formatBRL(d.precoNegociado)}`);
+      lines.push(`• *Desc. a mais:* ${(d.descAMaisRate * 100).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%`);
+      lines.push(`• *Total de desconto:* ${d.totalDescontoPct.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%`);
+      lines.push(`• *Diferença item:* ${formatBRL(d.difItem)}`);
+
+      lines.push("");
+      lines.push("*Totais*");
+      lines.push(`• *Total valor do pedido:* ${formatBRL(d.totalPedido)}`);
+      lines.push(`• *Diferença de preço total:* ${formatBRL(d.difItem)}`);
+
+      return lines.join("\n");
+    }
+
+    async function copyToClipboard(text) {
+      // Prefer navigator.clipboard (https context), fallback para execCommand
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+        return;
+      }
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.left = '-9999px';
+      ta.style.top = '-9999px';
+      document.body.appendChild(ta);
+      ta.focus();
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+    }
+
+    // Events
+    [el('precoTabela'), el('precoNegociado')].forEach(inp => {
+      inp.addEventListener('blur', () => { maskCurrencyInput(inp); recalc(); });
+      inp.addEventListener('input', recalc);
+    });
+
+    el('descPolitica').addEventListener('blur', () => { maskPercentInput(el('descPolitica')); recalc(); });
+    el('descPolitica').addEventListener('input', recalc);
+
+    el('qtd').addEventListener('input', recalc);
+
+    // Recalcular quando muda rádio e campos texto
+    document.querySelectorAll('input[name="tipoDesconto"], input[name="faturamentoPor"]').forEach(r => r.addEventListener('change', recalc));
+    ['codRca','nomeRca','codCliente','nomeCliente','prazo','codProduto','nomeProduto'].forEach(id => {
+      el(id).addEventListener('input', recalc);
+    });
+
+    // Init
+    el('precoTabela').value = 'R$ 0,00';
+    el('precoNegociado').value = 'R$ 0,00';
+    el('descPolitica').value = '0,00%';
+    recalc();
+
+    el('limpar').addEventListener('click', () => {
+      el('form').reset();
+      el('precoTabela').value = 'R$ 0,00';
+      el('precoNegociado').value = 'R$ 0,00';
+      el('descPolitica').value = '0,00%';
+
+      el('totalPedido').value = 'R$ 0,00';
+      el('difTotal').value = 'R$ 0,00';
+      el('precoPolitica').value = 'R$ 0,00';
+      el('descAMais').value = '0,00%';
+      el('totalDesconto').value = '0,00%';
+      el('difItem').value = 'R$ 0,00';
+      el('whatsPreview').value = '';
+
+      recalc();
+    });
+
+    el('imprimir').addEventListener('click', () => window.print());
+
+    el('copiar').addEventListener('click', async () => {
+      try {
+        const text = el('whatsPreview').value || buildWhatsText(getFormData());
+        await copyToClipboard(text);
+        showToast('Texto copiado! Agora é só colar no WhatsApp ✅');
+      } catch (e) {
+        console.error(e);
+        showToast('Não consegui copiar automaticamente. Selecione o texto e copie manualmente.');
+      }
+    });
+  </script>
+</body>
+</html>
