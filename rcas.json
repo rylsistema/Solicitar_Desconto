@@ -1,0 +1,602 @@
+﻿[
+    {
+        "nome":  "DISTRIBUIDORA ROSA DE OURO",
+        "codigo":  "1"
+    },
+    {
+        "nome":  "RCA BONIFICACAO",
+        "codigo":  "90"
+    },
+    {
+        "nome":  "PET GYN (C/ CLIENTES)",
+        "codigo":  "367"
+    },
+    {
+        "nome":  "PET AP - ROTA VAGA (C/ CLIENTES)",
+        "codigo":  "403"
+    },
+    {
+        "nome":  "CAMPOS BELOS - ROTA VAGA ( C/ CLIENTES)",
+        "codigo":  "407"
+    },
+    {
+        "nome":  "POSSE - ROTA VAGA ( C/ CLIENTES)",
+        "codigo":  "472"
+    },
+    {
+        "nome":  "ROBERTO NEVES",
+        "codigo":  "494"
+    },
+    {
+        "nome":  "ADM-FELIPE PEIXOTO SAFATLE",
+        "codigo":  "900"
+    },
+    {
+        "nome":  "SEGM 3 - ROTA VAGA ( C/ CLI)",
+        "codigo":  "1215"
+    },
+    {
+        "nome":  "SEGM 2 - ROTA VAGA (C/ CLI)",
+        "codigo":  "1218"
+    },
+    {
+        "nome":  "GV TO - IDVANIO SILVA",
+        "codigo":  "2"
+    },
+    {
+        "nome":  "GA - VAGO (RG SUL)",
+        "codigo":  "3"
+    },
+    {
+        "nome":  "PALMAS VAREJO 2 - ROTA VAGA",
+        "codigo":  "9"
+    },
+    {
+        "nome":  "PARAISO - GILDELVAN R. DE OLIVEIRA",
+        "codigo":  "10"
+    },
+    {
+        "nome":  "PALMAS - ORLANDO CIRQUEIRA DE LIMA",
+        "codigo":  "20"
+    },
+    {
+        "nome":  "PARAISO - JOAO NILSON SOARES SOUSA",
+        "codigo":  "32"
+    },
+    {
+        "nome":  "BREJINHO - ROTA VAGA (C/CLIENTE)",
+        "codigo":  "370"
+    },
+    {
+        "nome":  "ARAGUACU- ROTA VAGA C/CLIENTES",
+        "codigo":  "439"
+    },
+    {
+        "nome":  "PALMAS AP.RIO NEGRO-ROTA VAGA C/CLIENTES",
+        "codigo":  "440"
+    },
+    {
+        "nome":  "PALMAS C/NORTE- REGINALDO DA SILVA XAXA",
+        "codigo":  "441"
+    },
+    {
+        "nome":  "DIANOPOLIS - ROTA VAGA (C/ CLIENTES)",
+        "codigo":  "449"
+    },
+    {
+        "nome":  "SM PALMAS 1 - IVANILTON COSTA REIS",
+        "codigo":  "475"
+    },
+    {
+        "nome":  "PALMAS -TAQ - ADEVALDO RODRIGUES SILVA",
+        "codigo":  "490"
+    },
+    {
+        "nome":  "PONTE ALTA-ROTA VAGA (C/ CLIENTE)",
+        "codigo":  "491"
+    },
+    {
+        "nome":  "PALMAS SEGM - ROTA VAGA ( C/CLIENTE)",
+        "codigo":  "496"
+    },
+    {
+        "nome":  "ALVORADA - ROTA VAGA C/ CLIENTE",
+        "codigo":  "497"
+    },
+    {
+        "nome":  "PALMAS SUL - FLAVIA RIBEIRO MESSIAS",
+        "codigo":  "760"
+    },
+    {
+        "nome":  "PARAISO VAR- ROTA VAGA ( C/ CLIENTES)",
+        "codigo":  "801"
+    },
+    {
+        "nome":  "PORTO - MATEUS CAMPOS MARTINS",
+        "codigo":  "844"
+    },
+    {
+        "nome":  "ALIANCA-ROTA VAGA (C/ CLIENTE)",
+        "codigo":  "908"
+    },
+    {
+        "nome":  "TOCANTINIA-REJANIO",
+        "codigo":  "917"
+    },
+    {
+        "nome":  "GURUPI - MARCUS VINICIUS FERREIRA PESSOA",
+        "codigo":  "920"
+    },
+    {
+        "nome":  "CLT PALMAS- ROTA VAGA (C/CLI)",
+        "codigo":  "1300"
+    },
+    {
+        "nome":  "GA - LEONARDO S. MAGALHAES",
+        "codigo":  "4"
+    },
+    {
+        "nome":  "SM OUR 1 ANTONIO AUGUSTO H.RIBEIRO ",
+        "codigo":  "8"
+    },
+    {
+        "nome":  "SM OUR 2 CLEITON BRAZ DE FRANCA",
+        "codigo":  "468"
+    },
+    {
+        "nome":  "ANAP 1 - ROBERTO SANTANA TORRES",
+        "codigo":  "510"
+    },
+    {
+        "nome":  "SM-MARILDA LUCIA LEMES",
+        "codigo":  "525"
+    },
+    {
+        "nome":  "SM DIA 4 NILTON BERNARDES DA ROCHA",
+        "codigo":  "581"
+    },
+    {
+        "nome":  "SM DIA 2 -EDIMAR MARQUES DE PAULA",
+        "codigo":  "602"
+    },
+    {
+        "nome":  "ANAP 2-ROTA VAGA (C/CLIENTE)",
+        "codigo":  "650"
+    },
+    {
+        "nome":  "SM OUR 3 - ROTA VAGA(C/CLIENTE)",
+        "codigo":  "723"
+    },
+    {
+        "nome":  "SM DIA 1 LUCAS MATHEUS COSTA MAGALHAES",
+        "codigo":  "753"
+    },
+    {
+        "nome":  "SM DIA 3 - ANA PAULA ROCHA SILVA",
+        "codigo":  "768"
+    },
+    {
+        "nome":  "TRIND OUR- ROTA VAGA (C/ CLI)",
+        "codigo":  "885"
+    },
+    {
+        "nome":  "SM ANAP-LUCIANO GOUVEIA DE FREITAS",
+        "codigo":  "904"
+    },
+    {
+        "nome":  "ANAP 3-ROTA VAGA (C/ CLIENTE)",
+        "codigo":  "910"
+    },
+    {
+        "nome":  "SEGM 1 - ROTA VAGA (C/ CLIENTE)",
+        "codigo":  "913"
+    },
+    {
+        "nome":  "SM OUR 4 - ROTA VAGA (C/CLI)",
+        "codigo":  "916"
+    },
+    {
+        "nome":  "TRIND DIA- ROTA VAGA (C/CLI)",
+        "codigo":  "1219"
+    },
+    {
+        "nome":  "GA SUDOESTE - WALNEY AZEVEDO",
+        "codigo":  "5"
+    },
+    {
+        "nome":  "MINEIROS - EDUARDO FERNANDES ROCHA",
+        "codigo":  "653"
+    },
+    {
+        "nome":  "JATAI 2 - ROTA VAGA (C/CLIENTE)",
+        "codigo":  "747"
+    },
+    {
+        "nome":  "CACU-CLAUDINEI MARQUES DA SILVA(DESL S/C",
+        "codigo":  "767"
+    },
+    {
+        "nome":  "SM RIO VERDE-GIOVANE FRANCISCO FERREIRA",
+        "codigo":  "773"
+    },
+    {
+        "nome":  "JATAI - WELLINGTON SILVA LOPES",
+        "codigo":  "774"
+    },
+    {
+        "nome":  "QUIRIN - ROTA VAGA (C/CLI)",
+        "codigo":  "909"
+    },
+    {
+        "nome":  "SM JATAI - ULISSES SEVERINO DE SOUZA",
+        "codigo":  "915"
+    },
+    {
+        "nome":  "RIO VERDE-PAULO RICARDO SOUZA SILVA",
+        "codigo":  "918"
+    },
+    {
+        "nome":  "RIO VERDE 2 - ROTA VAGA (C/ CLI)",
+        "codigo":  "919"
+    },
+    {
+        "nome":  "SM ST-HELENA-ALESSANDRO SEBASTIAO MARTIN",
+        "codigo":  "1206"
+    },
+    {
+        "nome":  "ST HELENA - JEANENE CARLA COTA FERNANDES",
+        "codigo":  "1228"
+    },
+    {
+        "nome":  "CACU-ROTA VAGA (C/CLIENTE)",
+        "codigo":  "1229"
+    },
+    {
+        "nome":  "GA SUL - MATEUS CALACO",
+        "codigo":  "6"
+    },
+    {
+        "nome":  "PONTALINA-ROTA VAGA (C/CLI)",
+        "codigo":  "605"
+    },
+    {
+        "nome":  "IPAME/PIRES-ROTA VAGA (C/ CLIENTE)",
+        "codigo":  "675"
+    },
+    {
+        "nome":  "SILVANIA-ROTA VAGA (C/ CLIENTE)",
+        "codigo":  "761"
+    },
+    {
+        "nome":  "EDEIA-ROTA VAGA (C/CLI)",
+        "codigo":  "776"
+    },
+    {
+        "nome":  "ITUMB-MARCOS EDUARDO PEREIRA (EM DESLIG ",
+        "codigo":  "872"
+    },
+    {
+        "nome":  "CATALAO-GABRIELA BOTELHO DUARTE",
+        "codigo":  "882"
+    },
+    {
+        "nome":  "GOIATUBA-ROTA VAGA (C/CLI)",
+        "codigo":  "907"
+    },
+    {
+        "nome":  "CALDAS-CARLOS HENRIQUE GOMES DOS SANTOS",
+        "codigo":  "914"
+    },
+    {
+        "nome":  "MORRIN-AISKA HACYNE DE OLIVEIRA CASTILHO",
+        "codigo":  "1209"
+    },
+    {
+        "nome":  "ITUMB - ROTA VAGA (C/ CLIENTE)",
+        "codigo":  "1211"
+    },
+    {
+        "nome":  "PALMEIRAS-ROTA VAGA",
+        "codigo":  "1522"
+    },
+    {
+        "nome":  "TELEVENDAS-ROSA DE OURO",
+        "codigo":  "772"
+    },
+    {
+        "nome":  "SM ARAGUAINA 1 - ANTONIO FERREIRA COELHO",
+        "codigo":  "31"
+    },
+    {
+        "nome":  "COD VAGO",
+        "codigo":  "69"
+    },
+    {
+        "nome":  "GA - DAVID DOS SANTOS VIANA",
+        "codigo":  "238"
+    },
+    {
+        "nome":  "XAMBIOA/TOCANT - JUNIOR CESAR COSTA ",
+        "codigo":  "819"
+    },
+    {
+        "nome":  "COLINAS-GUSTAVO SOUZA DO CARMO(DESL",
+        "codigo":  "866"
+    },
+    {
+        "nome":  "ARAGUAINA-ROTA VAGA(C/CLIENTE)",
+        "codigo":  "875"
+    },
+    {
+        "nome":  "AUGUST - ROTA VAGA (C/ CLIENT)",
+        "codigo":  "876"
+    },
+    {
+        "nome":  "COLINAS TO-ROTA VAGA(C/CLI)",
+        "codigo":  "878"
+    },
+    {
+        "nome":  "ARAGUATINS-ROTA VAGA (C/CLI)",
+        "codigo":  "879"
+    },
+    {
+        "nome":  "ARAGUAINA - ROTA VAGA (C/CLI)",
+        "codigo":  "880"
+    },
+    {
+        "nome":  "GUARAI-PHETERSON FERNANDES DE ALMEIDA",
+        "codigo":  "881"
+    },
+    {
+        "nome":  "FILADELFIA-ROTA VAGA (C/CLI)",
+        "codigo":  "883"
+    },
+    {
+        "nome":  "COLINAS- LUIZ FERNANDO OLIVEIRA DE SOUZA",
+        "codigo":  "884"
+    },
+    {
+        "nome":  "GA - RINALDO OLIVEIRA ARAUJO",
+        "codigo":  "11"
+    },
+    {
+        "nome":  "ENT GYN-ROTA VAGA (C/ CLIENTE)",
+        "codigo":  "383"
+    },
+    {
+        "nome":  "INHUMAS - ROSEMIR BRAGA DA MOTA",
+        "codigo":  "508"
+    },
+    {
+        "nome":  "RG11/12 OUR - ROTA VAGA ( C/ CLIENTE)",
+        "codigo":  "520"
+    },
+    {
+        "nome":  "RG6/7 OUR- ROTA VAGA ( C/ CLIENTE)",
+        "codigo":  "587"
+    },
+    {
+        "nome":  "RG2/3 OUR-RUTE FRANCISCO DE TORRES",
+        "codigo":  "757"
+    },
+    {
+        "nome":  "CLT-MATHEUS CARVALHO DAMASCENO",
+        "codigo":  "1100"
+    },
+    {
+        "nome":  "AP1 OUR-ROTA VAGA (C/ CLIENTE)",
+        "codigo":  "1107"
+    },
+    {
+        "nome":  "RG4/8 OUR - CLEITON VIEIRA PENA",
+        "codigo":  "1115"
+    },
+    {
+        "nome":  "AP3 OUR - ROTA VAGA(C/ CLIENTE)",
+        "codigo":  "1123"
+    },
+    {
+        "nome":  "SEN OUR-WENDER BEZERRA",
+        "codigo":  "1124"
+    },
+    {
+        "nome":  "ATAC - ROTA VAGA (C/ CLIENTE)",
+        "codigo":  "1128"
+    },
+    {
+        "nome":  "RG1/5 OUR-ISABELY CRISTINA DUARTE BORTEL",
+        "codigo":  "1129"
+    },
+    {
+        "nome":  "NEROP-GABRIEL COELHO CUNHA",
+        "codigo":  "1130"
+    },
+    {
+        "nome":  "AP4 OUR-ROTA VAGA (C/CLIENTE)",
+        "codigo":  "1131"
+    },
+    {
+        "nome":  "AP2 OUR - EDILSON CARDOSO FERREIRA",
+        "codigo":  "1132"
+    },
+    {
+        "nome":  "REG ENT-ROTA VAGA (C/CLI)",
+        "codigo":  "1133"
+    },
+    {
+        "nome":  "RG9/10 OUR - ROTA VAGA ( C/CLIENTE)",
+        "codigo":  "1134"
+    },
+    {
+        "nome":  "AP1 DIA-ROTA VAGA (C/ CLIENTE)",
+        "codigo":  "1201"
+    },
+    {
+        "nome":  "AP2 DIA-ROTA VAGA (C/CLIENTE)",
+        "codigo":  "1202"
+    },
+    {
+        "nome":  "RG1/5 DIA-ROTA VAGA (C/ CLIENTE)",
+        "codigo":  "1203"
+    },
+    {
+        "nome":  "AP4 DIA-ROTA VAGA (C/ CLIENTE)",
+        "codigo":  "1204"
+    },
+    {
+        "nome":  "RG6/7 DIA-ROTA VAGA (C/ CLIENTE)",
+        "codigo":  "1207"
+    },
+    {
+        "nome":  "RG2/3 DIA-ROTA VAGA (C/ CLIENTE)",
+        "codigo":  "1212"
+    },
+    {
+        "nome":  "RG11/12 DIA-ROTA VAGA (C/ CLIENTE)",
+        "codigo":  "1214"
+    },
+    {
+        "nome":  "RG9/10  DIA-ROTA VAGA (C/ CLIENTE)",
+        "codigo":  "1217"
+    },
+    {
+        "nome":  "RG4/8 DIA-ROTA VAGA (C/ CLIENTE)",
+        "codigo":  "1223"
+    },
+    {
+        "nome":  "SENA DIA - ROTA VAGA (C/ CLIENTE)",
+        "codigo":  "1224"
+    },
+    {
+        "nome":  "AP3 DIA-ROTA VAGA(C/ CLIENTE)",
+        "codigo":  "1227"
+    },
+    {
+        "nome":  "GA ENTORNO DF - VAGO",
+        "codigo":  "12"
+    },
+    {
+        "nome":  "PIRI - JOSE ROBERTO DE FREITAS",
+        "codigo":  "39"
+    },
+    {
+        "nome":  "SM CID. OCI - SOUSA E BARBOSA REPRESENTA",
+        "codigo":  "380"
+    },
+    {
+        "nome":  "FORMOSA - ROTA VAGA ( C/ CLIENTES)",
+        "codigo":  "465"
+    },
+    {
+        "nome":  "LUZIANIA SM- IVAIRES ELIAS DOS SANTOS",
+        "codigo":  "683"
+    },
+    {
+        "nome":  "VALPARAISO-(ROTA VAGA )",
+        "codigo":  "1225"
+    },
+    {
+        "nome":  "GA NORTE - VAGO",
+        "codigo":  "15"
+    },
+    {
+        "nome":  "GC INT-JOSE REINALDO PEIXOTO SANTOS",
+        "codigo":  "500"
+    },
+    {
+        "nome":  "CERES1-ROTA VAGA (C/CLIENTE)",
+        "codigo":  "590"
+    },
+    {
+        "nome":  "CRIXAS-ROTA VAGA (C/ CLIENTE)",
+        "codigo":  "682"
+    },
+    {
+        "nome":  "ARAGARCA-ROTA VAGA (C/ CLIENTE)",
+        "codigo":  "685"
+    },
+    {
+        "nome":  "COORD(GA-15)-ROTA C/ CLI",
+        "codigo":  "1213"
+    },
+    {
+        "nome":  "FAINA-ROTA VAGA (C/CLIENTE)",
+        "codigo":  "1502"
+    },
+    {
+        "nome":  "JARAG-ADELIANE PINTO DE BASTOS",
+        "codigo":  "1504"
+    },
+    {
+        "nome":  "SAO MIGUEL-ROTA VAGA (C/CLIENTE)",
+        "codigo":  "1506"
+    },
+    {
+        "nome":  "PORANG-ROTA VAGA (C/CLIENTE)",
+        "codigo":  "1507"
+    },
+    {
+        "nome":  "ITABERAI-ROTA VAGA (C/CLIENTE)",
+        "codigo":  "1514"
+    },
+    {
+        "nome":  "ITAPURANGA-ROTA VAGA (C/CLIENTE)",
+        "codigo":  "1515"
+    },
+    {
+        "nome":  "MINACU-ROTA VAGA (C/CLIENTE)",
+        "codigo":  "1516"
+    },
+    {
+        "nome":  "URUACU-ROTA VAGA (C/ CLIENTE)",
+        "codigo":  "1517"
+    },
+    {
+        "nome":  "IPORA-ROTA VAGA(C/CLIENTE)",
+        "codigo":  "1518"
+    },
+    {
+        "nome":  "JUSSARA - ROTA VAGA (C/ CLIENTE)",
+        "codigo":  "1524"
+    },
+    {
+        "nome":  "ANICUNS-ROTA VAGA (C/CLI)",
+        "codigo":  "1525"
+    },
+    {
+        "nome":  "GOIANESIA - ROTA VAGA (C/CLIENTE)",
+        "codigo":  "1526"
+    },
+    {
+        "nome":  "S LUIS BELOS-ROTA VAGA (C/CLI)",
+        "codigo":  "1527"
+    },
+    {
+        "nome":  "JATAI - AMANDA KARINA BARROS FERRE(DESL",
+        "codigo":  "586"
+    },
+    {
+        "nome":  "PORTO-JORGE ANDRE RODRIGUES PINTO(DESL",
+        "codigo":  "591"
+    },
+    {
+        "nome":  "CALDAS-CARLOS ANTONIO SANTINO (DESL S/CL",
+        "codigo":  "595"
+    },
+    {
+        "nome":  "CATALAO - SUZANE FELIPE DA SILVA(EM DESL",
+        "codigo":  "871"
+    },
+    {
+        "nome":  "CONTROLE CLIENTES INATIVOS FECHADOS",
+        "codigo":  "901"
+    },
+    {
+        "nome":  "CLIENTES INATIVOS EXCLUIDOS",
+        "codigo":  "902"
+    },
+    {
+        "nome":  "SUPERVISOR RDO INATIVO",
+        "codigo":  "99"
+    }
+]

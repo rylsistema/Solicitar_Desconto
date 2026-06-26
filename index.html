@@ -213,25 +213,25 @@
           </div>
         </div>
 
-        <div class="field span-3">
-          <label>Código do RCA</label>
-          <input id="codRca" type="text">
-        </div>
-
-        <div class="field span-9">
-          <label>Nome do RCA</label>
-          <input id="nomeRca" class="upper" type="text">
-        </div>
-
         <div class="field span-4">
-          <label>Código do Cliente</label>
-          <input id="codCliente" type="text">
-        </div>
+  <label>Código do Cliente</label>
+  <input id="codCliente" type="text">
+</div>
 
-        <div class="field span-8">
-          <label>Nome do Cliente</label>
-          <input id="nomeCliente" class="upper" type="text">
-        </div>
+<div class="field span-8">
+  <label>Nome do Cliente</label>
+  <input id="nomeCliente" class="upper" type="text">
+</div>
+
+<div class="field span-3">
+  <label>Código do RCA</label>
+  <input id="codRca" type="text">
+</div>
+
+<div class="field span-9">
+  <label>Nome do RCA</label>
+  <input id="nomeRca" class="upper" type="text">
+</div>
 
         <div class="field span-4">
           <label>Prazo</label>
@@ -700,6 +700,31 @@ if(e.target.id === 'codCliente'){
   }
 
 }
+// BUSCA RCA AUTOMÁTICO
+if(e.target.id === 'codRca'){
+
+  const codigoRca = e.target.value.trim();
+
+  const rca = baseRcas.find(
+    r => r.codigo === codigoRca
+  );
+
+  if(rca){
+
+    document.getElementById('nomeRca').value =
+    rca.nome;
+
+  }
+
+}
+function buscarRca(codigo){
+
+  const rca = baseRcas.find(r => r.codigo === codigo);
+
+  document.getElementById('nomeRca').value =
+    rca ? rca.nome : '';
+
+}
 
  if(e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA'){
     e.target.value = e.target.value.toUpperCase();
@@ -775,6 +800,7 @@ document.getElementById('limpar').addEventListener('click', ()=>{
 
 let baseProdutos = [];
 let baseClientes = [];
+let baseRcas = [];
 
 async function carregarBases(){
 
@@ -784,8 +810,12 @@ async function carregarBases(){
   const respostaClientes = await fetch('clientes.json');
   baseClientes = await respostaClientes.json();
 
+  const respostaRcas = await fetch('rcas.json');
+  baseRcas = await respostaRcas.json();
+
   console.log('Produtos carregados:', baseProdutos);
   console.log('Clientes carregados:', baseClientes);
+  console.log('RCAs carregados:', baseRcas);
 
 }
 
