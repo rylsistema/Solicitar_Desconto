@@ -534,8 +534,14 @@ function buildWhatsText(){
   const faturamentoPor =
   document.querySelector('input[name="faturamentoPor"]:checked').value;
 
-  lines.push('*SOLICITAÇÃO DE DESCONTO*');
-  lines.push('');
+  const hoje = new Date();
+
+const dataAtual = hoje.toLocaleDateString('pt-BR');
+
+lines.push('*SOLICITAÇÃO DE DESCONTO*');
+lines.push('');
+lines.push(`Data: ${dataAtual}`);
+lines.push('');
 
   lines.push(`• *Tipo de desconto:* ${tipoDesconto}`);
   lines.push(`• *Faturamento por:* ${faturamentoPor}`);
@@ -624,7 +630,7 @@ function buildWhatsText(){
     lines.push(`Desc. a Mais: ${(descAMais * 100).toLocaleString('pt-BR',{
       minimumFractionDigits:2
     })}%`);
-    lines.push(`Total de Desconto: ${totalDesc.toLocaleString('pt-BR',{
+    lines.push(`*Total de Desconto:* ${totalDesc.toLocaleString('pt-BR',{
       minimumFractionDigits:2
     })}%`);
     lines.push(`Diferença Total do Item: ${formatBRL(difItem)}`);
