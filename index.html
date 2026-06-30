@@ -821,6 +821,33 @@ document.addEventListener('blur', function(e){
 
 }, true);
 
+// ===== Seleciona automaticamente o conteúdo ao receber foco =====
+
+document.addEventListener('focus', function(e){
+
+  if(
+    e.target.id === 'codCliente' ||
+    e.target.id === 'codRca' ||
+
+    e.target.classList.contains('codProduto') ||
+    e.target.classList.contains('qtd') ||
+    e.target.classList.contains('precoTabela') ||
+    e.target.classList.contains('precoNegociado') ||
+    e.target.classList.contains('descPolitica')
+  ){
+
+    if(e.target.value.trim() !== ''){
+
+      setTimeout(() => {
+        e.target.select();
+      }, 0);
+
+    }
+
+  }
+
+}, true);
+
 document.getElementById('copiar').addEventListener('click', async ()=>{
 
   try {
