@@ -92,6 +92,11 @@
       resize:vertical;
     }
 
+    .obs {
+  min-height:42px;
+  height:42px;
+}
+
     input[readonly] {
       background:#0c1428;
     }
@@ -234,9 +239,26 @@
 </div>
 
         <div class="field span-4">
-          <label>Prazo</label>
-          <input id="prazo" class="upper" type="text">
-        </div>
+  <label>Prazo</label>
+
+  <select id="prazo">
+    <option value="">Selecione...</option>
+    <option>À Vista</option>
+    <option>7 dias</option>
+    <option>14 dias</option>
+    <option>14/21 dias</option>
+    <option>14/21/28 dias</option>
+    <option>21 dias</option>
+    <option>21/28 dias</option>
+    <option>21/28/35 dias</option>
+    <option>28 dias</option>
+    <option>28/35 dias</option>
+    <option>28/35/42 dias</option>
+    <option>35 dias</option>
+    <option>35/42 dias</option>
+    <option>35/42/60 dias</option>
+  </select>
+</div>
 
       </div>
 
@@ -327,6 +349,15 @@
           <label>Diferença de Preço Total</label>
           <input id="difTotal" readonly value="R$ 0,00">
         </div>
+
+        <div class="field span-12">
+  <label>Observação</label>
+  <textarea
+      id="observacao"
+      class="upper obs"
+      rows="1"
+      placeholder="Digite uma observação, se necessário..."></textarea>
+</div>
 
         <div class="field span-12">
           <label>Texto formatado (prévia)</label>
@@ -538,8 +569,8 @@ function buildWhatsText(){
 
 const dataAtual = hoje.toLocaleDateString('pt-BR');
 
-lines.push('*SOLICITAÇÃO DE DESCONTO*');
-lines.push('');
+lines.push('🔴 *SOLICITAÇÃO DE DESCONTO*');
+
 lines.push(`Data: ${dataAtual}`);
 lines.push('');
 
@@ -569,6 +600,13 @@ lines.push('');
   if(prazo){
     lines.push(`• *Prazo:* ${prazo}`);
   }
+
+  const observacao =
+document.getElementById('observacao').value.trim();
+
+if(observacao){
+  lines.push(`• *Observação:* ${observacao}`);
+}
 
   lines.push('');
   lines.push('*Produtos*');
@@ -799,6 +837,7 @@ document.getElementById('copiar').addEventListener('click', async ()=>{
   }
 
 });
+document.getElementById('prazo').addEventListener('change', recalc);
 
 document.getElementById('limpar').addEventListener('click', ()=>{
   location.reload();
