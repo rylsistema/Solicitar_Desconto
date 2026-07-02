@@ -598,5 +598,10 @@
     {
         "nome":  "SUPERVISOR RDO INATIVO",
         "codigo":  "99"
+    },
+
+     {
+        "nome":  "GURUPI-CLAUDIONOR LOPES MACHADO",
+        "codigo":  "921"
     }
 ]
