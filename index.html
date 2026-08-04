@@ -608,6 +608,12 @@ document.getElementById('observacao').value.trim();
 if(observacao){
   lines.push(`• *Observação:* ${observacao}`);
 }
+  lines.push('');
+  lines.push('*Totais*');
+
+  lines.push(`• *Total valor do pedido:* ${document.getElementById('totalPedido').value}`);
+
+  lines.push(`• *Diferença de preço total:* ${document.getElementById('difTotal').value}`);
 
   lines.push('');
   lines.push('*Produtos*');
@@ -657,7 +663,6 @@ if(observacao){
     const difItem =
     (precoPolitica - precoNegociado) * qtd;
 
-    lines.push('');
     lines.push(`• ${cod} - ${nome}`);
     lines.push(`Qtd: ${qtd}`);
     lines.push(`Preço de Tabela: ${formatBRL(precoTabela)}`);
@@ -675,13 +680,6 @@ if(observacao){
     lines.push(`Diferença Total do Item: ${formatBRL(difItem)}`);
 
   });
-
-  lines.push('');
-  lines.push('*Totais*');
-
-  lines.push(`• *Total valor do pedido:* ${document.getElementById('totalPedido').value}`);
-
-  lines.push(`• *Diferença de preço total:* ${document.getElementById('difTotal').value}`);
 
   document.getElementById('whatsPreview').value =
   lines.join('\n');
