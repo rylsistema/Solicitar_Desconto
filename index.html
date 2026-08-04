@@ -433,7 +433,11 @@ function adicionarProduto(){
 
   clone.querySelectorAll('input').forEach(input=>{
 
-    if(input.readOnly){
+    if(input.classList.contains('nomeProduto')){
+        input.value = '';
+    }
+
+    else if(input.readOnly){
 
       input.value =
       input.classList.contains('precoPolitica') ||
@@ -663,6 +667,7 @@ if(observacao){
     const difItem =
     (precoPolitica - precoNegociado) * qtd;
 
+    lines.push('');
     lines.push(`• ${cod} - ${nome}`);
     lines.push(`Qtd: ${qtd}`);
     lines.push(`Preço de Tabela: ${formatBRL(precoTabela)}`);
