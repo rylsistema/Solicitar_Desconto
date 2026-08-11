@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Solicitação de desconto</title>
+  <title>Solicitação de Bonificação</title>
 
   <style>
     :root {
@@ -60,14 +60,20 @@
       grid-column: span 12;
     }
 
-    @media (min-width:820px){
-      .span-3 { grid-column: span 3; }
-      .span-4 { grid-column: span 4; }
-      .span-6 { grid-column: span 6; }
-      .span-8 { grid-column: span 8; }
-      .span-9 { grid-column: span 9; }
-      .span-12 { grid-column: span 12; }
-    }
+@media (min-width:820px){
+
+  .span-2  { grid-column: span 2; }
+  .span-3  { grid-column: span 3; }
+  .span-4  { grid-column: span 4; }
+  .span-5  { grid-column: span 5; }
+  .span-6  { grid-column: span 6; }
+  .span-7  { grid-column: span 7; }
+  .span-8  { grid-column: span 8; }
+  .span-9  { grid-column: span 9; }
+  .span-10 { grid-column: span 10; }
+  .span-12 { grid-column: span 12; }
+
+}
 
     label {
       display:block;
@@ -193,7 +199,7 @@
 <div class="wrap">
 
   <div class="title">
-    <h1>Solicitação de desconto</h1>
+    <h1>Solicitação de Bonificação</h1>
   </div>
 
   <div class="card">
@@ -202,67 +208,44 @@
 
       <div class="grid">
 
-        <div class="field span-6">
-          <label>Tipo de desconto</label>
+        <div class="field span-3">
+          <label>Bnf no Flex?</label>
           <div class="radioRow">
-            <label><input type="radio" name="tipoDesconto" value="Flex" checked> Flex</label>
-            <label><input type="radio" name="tipoDesconto" value="Conta Corrente"> Conta Corrente</label>
-            <label><input type="radio" name="tipoDesconto" value="Geral"> Geral</label>
+            <label><input type="radio" name="tipoDesconto" value="Sim" checked> Sim</label>
+            <label><input type="radio" name="tipoDesconto" value="Não"> Não</label>
           </div>
         </div>
-
-        <div class="field span-6">
-          <label>Faturamento por</label>
-          <div class="radioRow">
-            <label><input type="radio" name="faturamentoPor" value="Goiás" checked> Goiás</label>
-            <label><input type="radio" name="faturamentoPor" value="Tocantins"> Tocantins</label>
-          </div>
-        </div>
-
-        <div class="field span-4">
+       
+        <div class="field span-2">
   <label>Código do Cliente</label>
   <input id="codCliente" type="text">
 </div>
 
-<div class="field span-8">
+<div class="field span-7">
   <label>Nome do Cliente</label>
   <input id="nomeCliente" class="upper" type="text" readonly>
 </div>
 
-<div class="field span-3">
+<div class="field span-2">
   <label>Código do RCA</label>
   <input id="codRca" type="text">
 </div>
 
-<div class="field span-9">
+<div class="field span-10">
   <label>Nome do RCA</label>
   <input id="nomeRca" class="upper" type="text" readonly>
 </div>
 
-        <div class="field span-4">
-  <label>Prazo</label>
-
-  <select id="prazo">
-    <option value="">Selecione...</option>
-    <option>À Vista</option>
-    <option>7 dias</option>
-    <option>14 dias</option>
-    <option>14/21 dias</option>
-    <option>14/21/28 dias</option>
-    <option>21 dias</option>
-    <option>21/28 dias</option>
-    <option>21/28/35 dias</option>
-    <option>28 dias</option>
-    <option>28/35 dias</option>
-    <option>28/35/42 dias</option>
-    <option>35 dias</option>
-    <option>35/42 dias</option>
-    <option>35/42/60 dias</option>
-  </select>
+    <div class="field span-12">
+  <label>Motivo da Bonificação</label>
+  <textarea
+      id="motivo"
+      class="upper obs"
+      rows="1"
+      placeholder="Digite o motivo da bonificação..."></textarea>
 </div>
-
       </div>
-
+      
       <div id="produtosContainer">
 
         <div class="produto">
@@ -277,56 +260,30 @@
 
           <div class="grid">
 
-            <div class="field span-4">
+            <div class="field span-3">
               <label>Código do Produto</label>
               <input class="codProduto" type="text">
             </div>
 
-            <div class="field span-8">
+            <div class="field span-9">
               <label>Nome do Produto</label>
               <input class="nomeProduto upper" type="text" readonly>
             </div>
 
-            <div class="field span-3">
-              <label>Quantidade</label>
-              <input class="qtd" type="number">
-            </div>
+            <div class="field span-2">
+    <label>Quantidade</label>
+    <input class="qtd" type="number">
+</div>
 
-            <div class="field span-3">
-              <label>Preço de Tabela</label>
-              <input class="precoTabela" type="text" value="R$ 0,00">
-            </div>
+<div class="field span-3">
+    <label>Preço Unitário</label>
+    <input class="precoTabela" type="text" value="R$ 0,00">
+</div>
 
-            <div class="field span-3">
-              <label>% desconto política</label>
-              <input class="descPolitica" type="text" value="0,00%">
-            </div>
-
-            <div class="field span-3">
-              <label>Preço da política</label>
-              <input class="precoPolitica" type="text" readonly value="R$ 0,00">
-            </div>
-
-            <div class="field span-3">
-              <label>Preço negociado</label>
-              <input class="precoNegociado" type="text" value="R$ 0,00">
-            </div>
-
-            <div class="field span-3">
-              <label>Desc. a mais</label>
-              <input class="descAMais" type="text" readonly value="0,00%">
-            </div>
-
-            <div class="field span-3">
-              <label>Total de desconto</label>
-              <input class="totalDesconto" type="text" readonly value="0,00%">
-            </div>
-
-            <div class="field span-3">
-              <label>Diferença item</label>
-              <input class="difItem" type="text" readonly value="R$ 0,00">
-            </div>
-
+<div class="field span-3">
+    <label>Valor Total</label>
+    <input class="valorTotal" type="text" readonly value="R$ 0,00">
+</div>
           </div>
 
         </div>
@@ -342,23 +299,9 @@
       <div class="grid">
 
         <div class="field span-6">
-          <label>Total Valor do Pedido</label>
+          <label>Total Bonificação</label>
           <input id="totalPedido" readonly value="R$ 0,00">
         </div>
-
-        <div class="field span-6">
-          <label>Diferença de Preço Total</label>
-          <input id="difTotal" readonly value="R$ 0,00">
-        </div>
-
-        <div class="field span-12">
-  <label>Observação</label>
-  <textarea
-      id="observacao"
-      class="upper obs"
-      rows="1"
-      placeholder="Digite uma observação, se necessário..."></textarea>
-</div>
 
         <div class="field span-12">
           <label>Texto formatado (prévia)</label>
@@ -512,20 +455,17 @@ function recalc(){
     const precoPolitica =
     precoTabela * (1 - (descPolitica / 100));
 
-// Desconto total sobre o preço de tabela
-let descontoTotal = 0;
+    let descAMais = 0;
 
-if(precoTabela > 0){
-  descontoTotal =
-    ((precoTabela - precoNegociado) / precoTabela) * 100;
-}
+    if(precoPolitica > 0){
+      descAMais =
+      (precoPolitica - precoNegociado) / precoPolitica;
+    }
 
-// Desconto a mais = desconto total - desconto da política
-const descAMais =
-  Math.max(0, descontoTotal - descPolitica);
+    descAMais = Math.max(0, descAMais);
 
-const totalDesc =
-  descontoTotal;
+    const totalDesc =
+    descPolitica + (descAMais * 100);
 
     const difItem =
     (precoPolitica - precoNegociado) * qtd;
@@ -539,17 +479,15 @@ const totalDesc =
     produto.querySelector('.precoPolitica').value =
     formatBRL(precoPolitica);
 
-produto.querySelector('.descAMais').value =
-`${descAMais.toLocaleString('pt-BR',{
-  minimumFractionDigits:2,
-  maximumFractionDigits:2
-})}%`;
+    produto.querySelector('.descAMais').value =
+    `${(descAMais * 100).toLocaleString('pt-BR',{
+      minimumFractionDigits:2
+    })}%`;
 
-produto.querySelector('.totalDesconto').value =
-`${totalDesc.toLocaleString('pt-BR',{
-  minimumFractionDigits:2,
-  maximumFractionDigits:2
-})}%`;
+    produto.querySelector('.totalDesconto').value =
+    `${totalDesc.toLocaleString('pt-BR',{
+      minimumFractionDigits:2
+    })}%`;
 
     produto.querySelector('.difItem').value =
     formatBRL(difItem);
@@ -579,7 +517,7 @@ function buildWhatsText(){
 
 const dataAtual = hoje.toLocaleDateString('pt-BR');
 
-lines.push('🔴 *SOLICITAÇÃO DE DESCONTO*');
+lines.push('🟡 *SOLICITAÇÃO DE BONIFICAÇÃO*');
 
 lines.push(`Data: ${dataAtual}`);
 lines.push('');
