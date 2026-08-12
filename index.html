@@ -512,6 +512,9 @@ function recalc(){
     const precoPolitica =
     precoTabela * (1 - (descPolitica / 100));
 
+    const precoPoliticaArredondado =
+  Math.round(precoPolitica * 100) / 100;
+
 // Desconto total sobre o preço de tabela
 let descontoTotal = 0;
 
@@ -527,8 +530,8 @@ const descAMais =
 const totalDesc =
   descontoTotal;
 
-    const difItem =
-    (precoPolitica - precoNegociado) * qtd;
+const difItem =
+  (precoPoliticaArredondado - precoNegociado) * qtd;
 
     const totalItem =
     precoNegociado * qtd;
@@ -537,7 +540,7 @@ const totalDesc =
     totalDiferenca += difItem;
 
     produto.querySelector('.precoPolitica').value =
-    formatBRL(precoPolitica);
+    formatBRL(precoPoliticaArredondado);
 
 produto.querySelector('.descAMais').value =
 `${descAMais.toLocaleString('pt-BR',{
