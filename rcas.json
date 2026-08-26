@@ -860,7 +860,7 @@
         "codigo":  "484"
     },
     {
-        "nome":  "IPAME/PIRES-ROTA VAGA (C/ CLIENTE)",
+        "nome":  "IPAME/PIRES-ADILSON ARAUJO",
         "codigo":  "675"
     },
     {
@@ -3204,11 +3204,11 @@
         "codigo":  "1506"
     },
     {
-        "nome":  "RG2/3 OUR-RUTE FRANCISCO DE TORRES",
+        "nome":  "RG2/3 OUR-RUTE FRANCISCO DE TORRES(DESL",
         "codigo":  "757"
     },
     {
-        "nome":  "RG9/10 OUR - ROTA VAGA ( C/CLIENTE)",
+        "nome":  "RG9/10 OUR-PHELIPE GABRYEL RODRIGUES",
         "codigo":  "1134"
     },
     {
@@ -3396,7 +3396,7 @@
         "codigo":  "1128"
     },
     {
-        "nome":  "AP4 OUR-ROTA VAGA (C/CLIENTE)",
+        "nome":  "AP4 OUR-MATHEUS MENDES DOS SANTOS",
         "codigo":  "1131"
     },
     {
@@ -3458,6 +3458,14 @@
     {
         "nome":  "IPORA-ROTA VAGA(C/CLIENTE)",
         "codigo":  "1518"
+    },
+    {
+        "nome":  "ST HELENA - ROTA VAGA (C/CLI)",
+        "codigo":  "886"
+    },
+    {
+        "nome":  "CACU - ROTA VAGA (S/CLI)",
+        "codigo":  "887"
     },
     {
         "nome":  "AP2 OUR-VINICIUS MENEZES GUIMARAES(DESLI",
@@ -3564,7 +3572,7 @@
         "codigo":  "650"
     },
     {
-        "nome":  "CATALAO - ROTA VAGA (C/CLI)",
+        "nome":  "CATALAO - LEANDRO ANTONIO PIRES",
         "codigo":  "606"
     },
     {
@@ -3620,8 +3628,12 @@
         "codigo":  "870"
     },
     {
-        "nome":  "ST HELENA - JEANENE CARLA COTA FERNANDES",
+        "nome":  "ST HELENA - JEANENE CARLA COTA (DESL S/C",
         "codigo":  "1228"
+    },
+    {
+        "nome":  "PALMAS-RICARDO ALVES DE CARVALHO",
+        "codigo":  "777"
     },
     {
         "nome":  "GUARAI-PHETERSON FERNANDES DE ALMEIDA",
@@ -3676,7 +3688,7 @@
         "codigo":  "596"
     },
     {
-        "nome":  "CACU-CLAUDINEI MARQUES DA SILVA",
+        "nome":  "CACU-CLAUDINEI MARQUES DA SILVA(DESL S/C",
         "codigo":  "767"
     },
     {
@@ -3686,6 +3698,10 @@
     {
         "nome":  "PORANG-RODRIGO FERREIRA ROCHA",
         "codigo":  "1511"
+    },
+    {
+        "nome":  "RG2/3 OUR- RAPHAEL MARCOS SILVA",
+        "codigo":  "1137"
     },
     {
         "nome":  "SEN OUR-WENDER BEZERRA",
