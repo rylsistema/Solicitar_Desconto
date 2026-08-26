@@ -55,6 +55,25 @@
       grid-template-columns: repeat(12,1fr);
       gap:12px;
     }
+    .info-flex {
+  grid-column: span 3;
+}
+
+.info-codcliente {
+  grid-column: span 3;
+}
+
+.info-nomecliente {
+  grid-column: span 6;
+}
+
+.info-codrca {
+  grid-column: span 3;
+}
+
+.info-nomerca {
+  grid-column: span 9;
+}
 
     .field {
       grid-column: span 12;
@@ -72,6 +91,26 @@
   .span-9  { grid-column: span 9; }
   .span-10 { grid-column: span 10; }
   .span-12 { grid-column: span 12; }
+
+    .info-flex {
+    grid-column: span 3;
+  }
+
+  .info-codcliente {
+    grid-column: span 3;
+  }
+
+  .info-nomecliente {
+    grid-column: span 6;
+  }
+
+  .info-codrca {
+    grid-column: span 3;
+  }
+
+  .info-nomerca {
+    grid-column: span 9;
+  }
 
 }
 
@@ -103,48 +142,83 @@
   height:42px;
 }
 
-    input[readonly] {
-      textarea[readonly] {
+   input[readonly],
+textarea[readonly] {
   background:#f3f4f6;
   color:#374151;
-    }
+}
 
     .radioRow {
-      display:flex;
-      gap:12px;
-      padding:12px;
-      border-radius:12px;
-      background:#0f1830;
-      border:1px solid var(--line);
-    }
+  display:flex;
+  align-items:center;
+  gap:18px;
+  height:42px;
+  padding:0 12px;
+  border-radius:12px;
+  background:#ffffff;
+  border:1px solid var(--line);
+}
 
-    .radioRow label {
-      margin:0;
-      display:flex;
-      align-items:center;
-      gap:8px;
-      color:var(--text);
-      font-size:14px;
-    }
+   .radioRow label {
+  display:flex;
+  align-items:center;
+  gap:6px;
+  margin:0;
+  white-space:nowrap;
+  color:var(--text);
+  font-size:14px;
+}
 
-    .radioRow input {
-      width:auto;
-    }
+   .radioRow input {
+  width:auto;
+  margin:0;
+}
 
     .produto {
       border:1px solid var(--line);
       border-radius:16px;
       padding:14px;
       margin-top:18px;
-      background: rgba(15,24,48,.45);
+      background: #f8f9fb;
+    }
+
+    .produtoCabecalho {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:16px;
     }
 
     .produtoTitulo {
       font-size:15px;
       font-weight:700;
-      margin-bottom:12px;
-      color:#cfe0ff;
+      color:#1f2937;
+      margin:0;
     }
+    
+    .btnRemover {
+      padding:8px 12px;
+      font-size:12px;
+        }
+
+        .btnVoltar {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 14px;
+  border-radius:12px;
+  border:1px solid var(--line);
+  background:#ffffff;
+  color:#1f2937;
+  text-decoration:none;
+  font-weight:600;
+  font-size:14px;
+  cursor:pointer;
+}
+
+.btnVoltar:hover {
+  background:#f1f5f9;
+}
 
     .actions {
       display:flex;
@@ -156,7 +230,7 @@
 
     button {
       border:1px solid var(--line);
-      background:#0f1830;
+      background:#ffffff;
       color:var(--text);
       padding:10px 14px;
       border-radius:12px;
@@ -201,8 +275,12 @@
 <div class="wrap">
 
   <div class="title">
-    <h1>Solicitação de Bonificação</h1>
-  </div>
+  <h1>Solicitação de Bonificação</h1>
+
+  <a href="index.html" class="btnVoltar">
+    ← Solicitação de Desconto
+  </a>
+</div>
 
   <div class="card">
 
@@ -210,30 +288,38 @@
 
       <div class="grid">
 
-        <div class="field span-3">
-          <label>Bnf no Flex?</label>
-          <div class="radioRow">
-            <label><input type="radio" name="tipoDesconto" value="Sim" checked> Sim</label>
-            <label><input type="radio" name="tipoDesconto" value="Não"> Não</label>
-          </div>
-        </div>
-       
-        <div class="field span-2">
+        <div class="field info-flex">
+  <label>Bnf no Flex?</label>
+
+  <div class="radioRow">
+    <label>
+      <input type="radio" name="tipoDesconto" value="Sim" checked>
+      Sim
+    </label>
+
+    <label>
+      <input type="radio" name="tipoDesconto" value="Não">
+      Não
+    </label>
+  </div>
+</div>
+
+<div class="field info-codcliente">
   <label>Código do Cliente</label>
   <input id="codCliente" type="text">
 </div>
 
-<div class="field span-7">
+<div class="field info-nomecliente">
   <label>Nome do Cliente</label>
   <input id="nomeCliente" class="upper" type="text" readonly>
 </div>
 
-<div class="field span-2">
+<div class="field info-codrca">
   <label>Código do RCA</label>
   <input id="codRca" type="text">
 </div>
 
-<div class="field span-10">
+<div class="field info-nomerca">
   <label>Nome do RCA</label>
   <input id="nomeRca" class="upper" type="text" readonly>
 </div>
@@ -252,13 +338,17 @@
 
         <div class="produto">
 
+        <div class="produtoCabecalho">  
+
           <div class="produtoTitulo">Produto</div>
 
-          <div style="display:flex;justify-content:flex-end;margin-bottom:12px;">
-            <button type="button" onclick="removerProduto(this)">
-              ❌ Remover Produto
-            </button>
-          </div>
+  <button
+    type="button"
+    class="btnRemover"
+    onclick="removerProduto(this)">
+    ❌ Remover Produto
+  </button>
+        </div>
 
           <div class="grid">
 
@@ -330,6 +420,36 @@
 
 <script>
 
+let baseProdutos = [];
+let baseClientes = [];
+let baseRcas = [];
+
+async function carregarBases(){
+
+  const respostaProdutos =
+    await fetch('produtos.json');
+
+  baseProdutos =
+    await respostaProdutos.json();
+
+  const respostaClientes =
+    await fetch('clientes.json');
+
+  baseClientes =
+    await respostaClientes.json();
+
+  const respostaRcas =
+    await fetch('rcas.json');
+
+  baseRcas =
+    await respostaRcas.json();
+
+  console.log('Produtos carregados:', baseProdutos);
+  console.log('Clientes carregados:', baseClientes);
+  console.log('RCAs carregados:', baseRcas);
+
+}
+
 const brl = new Intl.NumberFormat('pt-BR', {
   style:'currency',
   currency:'BRL'
@@ -372,45 +492,23 @@ function showToast(msg){
 
 function adicionarProduto(){
 
-  const original = document.querySelector('.produto');
+  const original =
+    document.querySelector('.produto');
 
-  const clone = original.cloneNode(true);
+  const clone =
+    original.cloneNode(true);
 
-  clone.querySelectorAll('input').forEach(input=>{
+  clone.querySelector('.codProduto').value = '';
+  clone.querySelector('.nomeProduto').value = '';
+  clone.querySelector('.qtd').value = '';
+  clone.querySelector('.precoTabela').value = 'R$ 0,00';
+  clone.querySelector('.valorTotal').value = 'R$ 0,00';
 
-    if(input.classList.contains('nomeProduto')){
-        input.value = '';
-    }
+  document
+    .getElementById('produtosContainer')
+    .appendChild(clone);
 
-    else if(input.readOnly){
-
-      input.value =
-      input.classList.contains('precoPolitica') ||
-      input.classList.contains('difItem')
-      ? 'R$ 0,00'
-      : '0,00%';
-
-    } else {
-
-      if(
-        input.classList.contains('precoTabela') ||
-        input.classList.contains('precoNegociado')
-      ){
-        input.value = 'R$ 0,00';
-      }
-
-      else if(input.classList.contains('descPolitica')){
-        input.value = '0,00%';
-      }
-
-      else {
-        input.value = '';
-      }
-    }
-
-  });
-
-  document.getElementById('produtosContainer').appendChild(clone);
+  clone.querySelector('.codProduto').focus();
 }
 
 function removerProduto(botao){
@@ -431,208 +529,138 @@ function removerProduto(botao){
 
 function recalc(){
 
-  let totalPedido = 0;
-  let totalDiferenca = 0;
+  let totalBonificacao = 0;
 
-  const produtos = document.querySelectorAll('.produto');
+  const produtos =
+    document.querySelectorAll('.produto');
 
-  produtos.forEach(produto=>{
+  produtos.forEach(produto => {
 
     const qtd =
-    parseBRNumber(produto.querySelector('.qtd').value);
+      parseBRNumber(
+        produto.querySelector('.qtd').value
+      );
 
-    const precoTabela =
-    parseBRNumber(produto.querySelector('.precoTabela').value);
+    const precoUnitario =
+      parseBRNumber(
+        produto.querySelector('.precoTabela').value
+      );
 
-    const descPolitica =
-    clamp(
-      parseBRNumber(produto.querySelector('.descPolitica').value),
-      0,
-      100
-    );
+    const valorTotal =
+      qtd * precoUnitario;
 
-    const precoNegociado =
-    parseBRNumber(produto.querySelector('.precoNegociado').value);
+    totalBonificacao += valorTotal;
 
-    const precoPolitica =
-    precoTabela * (1 - (descPolitica / 100));
-
-    let descAMais = 0;
-
-    if(precoPolitica > 0){
-      descAMais =
-      (precoPolitica - precoNegociado) / precoPolitica;
-    }
-
-    descAMais = Math.max(0, descAMais);
-
-    const totalDesc =
-    descPolitica + (descAMais * 100);
-
-    const difItem =
-    (precoPolitica - precoNegociado) * qtd;
-
-    const totalItem =
-    precoNegociado * qtd;
-
-    totalPedido += totalItem;
-    totalDiferenca += difItem;
-
-    produto.querySelector('.precoPolitica').value =
-    formatBRL(precoPolitica);
-
-    produto.querySelector('.descAMais').value =
-    `${(descAMais * 100).toLocaleString('pt-BR',{
-      minimumFractionDigits:2
-    })}%`;
-
-    produto.querySelector('.totalDesconto').value =
-    `${totalDesc.toLocaleString('pt-BR',{
-      minimumFractionDigits:2
-    })}%`;
-
-    produto.querySelector('.difItem').value =
-    formatBRL(difItem);
+    produto.querySelector('.valorTotal').value =
+      formatBRL(valorTotal);
 
   });
 
   document.getElementById('totalPedido').value =
-  formatBRL(totalPedido);
-
-  document.getElementById('difTotal').value =
-  formatBRL(totalDiferenca);
+    formatBRL(totalBonificacao);
 
   buildWhatsText();
+
 }
 
 function buildWhatsText(){
 
   const lines = [];
 
-  const tipoDesconto =
-  document.querySelector('input[name="tipoDesconto"]:checked').value;
-
-  const faturamentoPor =
-  document.querySelector('input[name="faturamentoPor"]:checked').value;
+  const tipoFlex =
+    document.querySelector(
+      'input[name="tipoDesconto"]:checked'
+    ).value;
 
   const hoje = new Date();
 
-const dataAtual = hoje.toLocaleDateString('pt-BR');
+  const dataAtual =
+    hoje.toLocaleDateString('pt-BR');
 
-lines.push('🟡 *SOLICITAÇÃO DE BONIFICAÇÃO*');
+  lines.push('🟡 *SOLICITAÇÃO DE BONIFICAÇÃO*');
+  lines.push(`Data: ${dataAtual}`);
+  lines.push('');
 
-lines.push(`Data: ${dataAtual}`);
-lines.push('');
+  lines.push(`• *Bnf no Flex?:* ${tipoFlex}`);
 
-  lines.push(`• *Tipo de desconto:* ${tipoDesconto}`);
-  lines.push(`• *Faturamento por:* ${faturamentoPor}`);
+  const codRca =
+    document.getElementById('codRca').value;
 
-  const codRca = document.getElementById('codRca').value;
-  const nomeRca = document.getElementById('nomeRca').value;
+  const nomeRca =
+    document.getElementById('nomeRca').value;
 
   if(codRca || nomeRca){
-    lines.push(`• *RCA:* ${codRca} - ${nomeRca}`);
+    lines.push(
+      `• *RCA:* ${codRca} - ${nomeRca}`
+    );
   }
 
   const codCliente =
-  document.getElementById('codCliente').value;
+    document.getElementById('codCliente').value;
 
   const nomeCliente =
-  document.getElementById('nomeCliente').value;
+    document.getElementById('nomeCliente').value;
 
   if(codCliente || nomeCliente){
-    lines.push(`• *Cliente:* ${codCliente} - ${nomeCliente}`);
+    lines.push(
+      `• *Cliente:* ${codCliente} - ${nomeCliente}`
+    );
   }
 
-  const prazo =
-  document.getElementById('prazo').value;
+  const motivo =
+    document.getElementById('motivo').value.trim();
 
-  if(prazo){
-    lines.push(`• *Prazo:* ${prazo}`);
+  if(motivo){
+    lines.push('');
+    lines.push('*MOTIVO DA BONIFICAÇÃO:*');
+    lines.push(motivo);
   }
 
-  const observacao =
-document.getElementById('observacao').value.trim();
-
-if(observacao){
-  lines.push(`• *Observação:* ${observacao}`);
-}
   lines.push('');
-  lines.push('*Totais*');
-
-  lines.push(`• *Total valor do pedido:* ${document.getElementById('totalPedido').value}`);
-
-  lines.push(`• *Diferença de preço total:* ${document.getElementById('difTotal').value}`);
+  lines.push('*TOTAL BONIFICAÇÃO*');
+  lines.push(
+    document.getElementById('totalPedido').value
+  );
 
   lines.push('');
-  lines.push('*Produtos*');
+  lines.push('*PRODUTOS*');
 
   const produtos =
-  document.querySelectorAll('.produto');
+    document.querySelectorAll('.produto');
 
-  produtos.forEach(p=>{
+  produtos.forEach(p => {
 
     const cod =
-    p.querySelector('.codProduto').value || '';
+      p.querySelector('.codProduto').value || '';
 
     const nome =
-    p.querySelector('.nomeProduto').value || '';
+      p.querySelector('.nomeProduto').value || '';
 
     const qtd =
-    parseBRNumber(p.querySelector('.qtd').value);
+      parseBRNumber(
+        p.querySelector('.qtd').value
+      );
 
-    const precoTabela =
-    parseBRNumber(p.querySelector('.precoTabela').value);
+    const preco =
+      parseBRNumber(
+        p.querySelector('.precoTabela').value
+      );
 
-    const descPolitica =
-    clamp(
-      parseBRNumber(p.querySelector('.descPolitica').value),
-      0,
-      100
-    );
-
-    const precoNegociado =
-    parseBRNumber(p.querySelector('.precoNegociado').value);
-
-    const precoPolitica =
-    precoTabela * (1 - (descPolitica / 100));
-
-    let descAMais = 0;
-
-    if(precoPolitica > 0){
-      descAMais =
-      (precoPolitica - precoNegociado) / precoPolitica;
-    }
-
-    descAMais = Math.max(0, descAMais);
-
-    const totalDesc =
-    descPolitica + (descAMais * 100);
-
-    const difItem =
-    (precoPolitica - precoNegociado) * qtd;
+    const valorTotal =
+      qtd * preco;
 
     lines.push('');
-    lines.push(`• ${cod} - ${nome}`);
-    lines.push(`Qtd: ${qtd}`);
-    lines.push(`Preço de Tabela: ${formatBRL(precoTabela)}`);
-    lines.push(`% Desconto Política: ${descPolitica.toLocaleString('pt-BR',{
-      minimumFractionDigits:2
-    })}%`);
-    lines.push(`Preço da Política: ${formatBRL(precoPolitica)}`);
-    lines.push(`Preço Negociado: ${formatBRL(precoNegociado)}`);
-    lines.push(`Desc. a Mais: ${(descAMais * 100).toLocaleString('pt-BR',{
-      minimumFractionDigits:2
-    })}%`);
-    lines.push(`*Total de Desconto:* ${totalDesc.toLocaleString('pt-BR',{
-      minimumFractionDigits:2
-    })}%`);
-    lines.push(`Diferença Total do Item: ${formatBRL(difItem)}`);
+    lines.push(`*${cod} - ${nome}*`);
+    lines.push(`Quantidade: ${qtd}`);
+    lines.push(`Preço Item: ${formatBRL(preco)}`);
+    lines.push(
+      `VALOR TT: ${formatBRL(valorTotal)}`
+    );
 
   });
 
   document.getElementById('whatsPreview').value =
-  lines.join('\n');
+    lines.join('\n');
 }
 
 async function copyToClipboard(text){
@@ -656,114 +684,102 @@ async function copyToClipboard(text){
 }
 
 document.addEventListener('input', function(e){
-// BUSCA PRODUTO AUTOMÁTICO
-if(e.target.classList.contains('codProduto')){
 
-  const codigo = e.target.value.trim();
-
-  const produto = baseProdutos.find(
-    p => p.codigo === codigo
-  );
-
-  if(produto){
-
-    const bloco = e.target.closest('.produto');
-
-    bloco.querySelector('.nomeProduto').value =
-    produto.nome;
-
-  }
-
-}
-
-// BUSCA CLIENTE AUTOMÁTICO
-if(e.target.id === 'codCliente'){
-
-  const codigoCliente = e.target.value.trim();
-
-  const cliente = baseClientes.find(
-    c => c.codigo === codigoCliente
-  );
-
-  if(cliente){
-
-    document.getElementById('nomeCliente').value =
-    cliente.nome;
-
-  }
-
-}
-// BUSCA RCA AUTOMÁTICO
-if(e.target.id === 'codRca'){
-
-  const codigoRca = e.target.value.trim();
-
-  const rca = baseRcas.find(
-    r => r.codigo === codigoRca
-  );
-
-  if(rca){
-
-    document.getElementById('nomeRca').value =
-    rca.nome;
-
-  }
-
-}
-function buscarRca(codigo){
-
-  const rca = baseRcas.find(r => r.codigo === codigo);
-
-  document.getElementById('nomeRca').value =
-    rca ? rca.nome : '';
-
-}
-
- if(e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA'){
-    e.target.value = e.target.value.toUpperCase();
-  }
-
- if(e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA'){
-    e.target.value = e.target.value.toUpperCase();
-  }
-
+  // QUANTIDADE E PREÇO
   if(
     e.target.classList.contains('qtd') ||
-    e.target.classList.contains('precoTabela') ||
-    e.target.classList.contains('precoNegociado') ||
-    e.target.classList.contains('descPolitica') ||
-    e.target.classList.contains('codProduto') ||
-    e.target.classList.contains('nomeProduto') ||
-    e.target.id === 'codRca' ||
-    e.target.id === 'nomeRca' ||
-    e.target.id === 'codCliente' ||
-    e.target.id === 'nomeCliente' ||
-    e.target.id === 'prazo'
+    e.target.classList.contains('precoTabela')
   ){
     recalc();
+  }
+
+
+  // BUSCA PRODUTO
+  if(e.target.classList.contains('codProduto')){
+
+    console.log('BUSCA PRODUTO ATIVADA');
+
+    const codigo =
+      e.target.value.trim();
+
+    const bloco =
+      e.target.closest('.produto');
+
+    const produto =
+      baseProdutos.find(
+        p => String(p.codigo).trim() === codigo
+      );
+
+    if(produto){
+
+      bloco.querySelector('.nomeProduto').value =
+        produto.nome;
+
+    } else {
+
+      bloco.querySelector('.nomeProduto').value = '';
+
+    }
+
+  }
+
+
+  // BUSCA CLIENTE
+  if(e.target.id === 'codCliente'){
+
+    const codigo =
+      e.target.value.trim();
+
+    const cliente =
+      baseClientes.find(
+        c => String(c.codigo).trim() === codigo
+      );
+
+    if(cliente){
+
+      document.getElementById('nomeCliente').value =
+        cliente.nome;
+
+    } else {
+
+      document.getElementById('nomeCliente').value = '';
+
+    }
+
+  }
+
+
+  // BUSCA RCA
+  if(e.target.id === 'codRca'){
+
+    const codigo =
+      e.target.value.trim();
+
+    const rca =
+      baseRcas.find(
+        r => String(r.codigo).trim() === codigo
+      );
+
+    if(rca){
+
+      document.getElementById('nomeRca').value =
+        rca.nome;
+
+    } else {
+
+      document.getElementById('nomeRca').value = '';
+
+    }
+
   }
 
 });
 
 document.addEventListener('blur', function(e){
 
-  if(
-    e.target.classList.contains('precoTabela') ||
-    e.target.classList.contains('precoNegociado')
-  ){
+   if(e.target.classList.contains('precoTabela')){
     e.target.value =
-    formatBRL(parseBRNumber(e.target.value));
-  }
-
-  if(e.target.classList.contains('descPolitica')){
-
-    const valor =
-    clamp(parseBRNumber(e.target.value),0,100);
-
-    e.target.value =
-    `${valor.toLocaleString('pt-BR',{
-      minimumFractionDigits:2
-    })}%`;
+      formatBRL(parseBRNumber(e.target.value));
   }
 
   recalc();
@@ -777,13 +793,10 @@ document.addEventListener('focus', function(e){
   if(
     e.target.id === 'codCliente' ||
     e.target.id === 'codRca' ||
-
     e.target.classList.contains('codProduto') ||
     e.target.classList.contains('qtd') ||
-    e.target.classList.contains('precoTabela') ||
-    e.target.classList.contains('precoNegociado') ||
-    e.target.classList.contains('descPolitica')
-  ){
+    e.target.classList.contains('precoTabela')
+      ){
 
     if(e.target.value.trim() !== ''){
 
@@ -813,32 +826,10 @@ document.getElementById('copiar').addEventListener('click', async ()=>{
   }
 
 });
-document.getElementById('prazo').addEventListener('change', recalc);
 
 document.getElementById('limpar').addEventListener('click', ()=>{
   location.reload();
 });
-
-let baseProdutos = [];
-let baseClientes = [];
-let baseRcas = [];
-
-async function carregarBases(){
-
-  const respostaProdutos = await fetch('produtos.json');
-  baseProdutos = await respostaProdutos.json();
-
-  const respostaClientes = await fetch('clientes.json');
-  baseClientes = await respostaClientes.json();
-
-  const respostaRcas = await fetch('rcas.json');
-  baseRcas = await respostaRcas.json();
-
-  console.log('Produtos carregados:', baseProdutos);
-  console.log('Clientes carregados:', baseClientes);
-  console.log('RCAs carregados:', baseRcas);
-
-}
 
 carregarBases();
 
