@@ -208,6 +208,158 @@ button {
 .upper {
   text-transform: uppercase;
 }
+
+/* ===== RELATÓRIO PARA IMPRESSÃO / PDF ===== */
+
+.relatorioPrint {
+  display:none;
+}
+
+@media print {
+
+  @page {
+    size:A4;
+    margin:12mm;
+  }
+
+  body {
+    background:#FFFFFF !important;
+    color:#111827 !important;
+  }
+
+  body * {
+    visibility:hidden !important;
+  }
+
+  #relatorioPrint,
+  #relatorioPrint * {
+    visibility:visible !important;
+  }
+
+  #relatorioPrint {
+    display:block !important;
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    padding:0;
+    background:#FFFFFF;
+    color:#111827;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:10px;
+  }
+
+  .printCabecalho {
+    border-bottom:2px solid #315F9A;
+    padding-bottom:8px;
+    margin-bottom:12px;
+  }
+
+  .printCabecalho h2 {
+    margin:0 0 4px;
+    color:#315F9A;
+    font-size:19px;
+  }
+
+  .printData {
+    font-size:10px;
+    color:#52657A;
+  }
+
+  .printInfo {
+    width:100%;
+    border-collapse:collapse;
+    margin-bottom:12px;
+  }
+
+  .printInfo td {
+    padding:4px 6px;
+    border:1px solid #D6DEE7;
+    vertical-align:top;
+  }
+
+  .printInfo .rotulo {
+    font-weight:700;
+    color:#315F9A;
+    width:18%;
+    background:#F3F6FA;
+  }
+
+  .printTabela {
+    width:100%;
+    border-collapse:collapse;
+    table-layout:fixed;
+    margin-top:6px;
+  }
+
+  .printTabela th {
+    background:#315F9A;
+    color:#FFFFFF;
+    font-weight:700;
+    padding:6px 4px;
+    border:1px solid #264D7D;
+    font-size:8.5px;
+  }
+
+  .printTabela td {
+    padding:5px 4px;
+    border:1px solid #D6DEE7;
+    color:#111827;
+    font-size:8.5px;
+    word-wrap:break-word;
+  }
+
+  .printTabela tr:nth-child(even) td {
+    background:#F8FAFC;
+  }
+
+  .printTotais {
+    width:100%;
+    border-collapse:collapse;
+    margin-top:12px;
+  }
+
+  .printTotais td {
+    padding:7px 8px;
+    border:1px solid #D6DEE7;
+  }
+
+  .printTotais .rotulo {
+    font-weight:700;
+    color:#315F9A;
+    background:#F3F6FA;
+    width:75%;
+  }
+
+  .printTotais .valor {
+    font-weight:700;
+    text-align:right;
+    white-space:nowrap;
+  }
+
+  .printObs {
+    margin-top:12px;
+    border:1px solid #D6DEE7;
+    padding:8px;
+    min-height:30px;
+  }
+
+  .printObsTitulo {
+    font-weight:700;
+    color:#315F9A;
+    margin-bottom:4px;
+  }
+
+  .printRodape {
+    margin-top:14px;
+    padding-top:6px;
+    border-top:1px solid #D6DEE7;
+    text-align:center;
+    color:#64748B;
+    font-size:8px;
+  }
+}
+
   </style>
 </head>
 
@@ -396,7 +548,7 @@ button {
       <div class="actions">
         <button type="button" id="limpar">Limpar</button>
         <button type="button" class="success" id="copiar">Copiar</button>
-        <button type="button" class="primary" onclick="window.print()">
+        <button type="button" class="primary" onclick="imprimirRelatorio()">
           Imprimir
         </button>
       </div>
@@ -406,6 +558,8 @@ button {
   </div>
 
 </div>
+
+<div id="relatorioPrint" class="relatorioPrint"></div>
 
 <div id="toast" class="toast"></div>
 
@@ -722,6 +876,168 @@ if(observacao){
 
   document.getElementById('whatsPreview').value =
   lines.join('\n');
+}
+
+
+function imprimirRelatorio(){
+
+  const tipoDesconto =
+    document.querySelector('input[name="tipoDesconto"]:checked')?.value || '';
+
+  const faturamentoPor =
+    document.querySelector('input[name="faturamentoPor"]:checked')?.value || '';
+
+  const codRca =
+    document.getElementById('codRca').value.trim();
+
+  const nomeRca =
+    document.getElementById('nomeRca').value.trim();
+
+  const codCliente =
+    document.getElementById('codCliente').value.trim();
+
+  const nomeCliente =
+    document.getElementById('nomeCliente').value.trim();
+
+  const prazo =
+    document.getElementById('prazo').value.trim();
+
+  const observacao =
+    document.getElementById('observacao').value.trim();
+
+  const hoje =
+    new Date().toLocaleDateString('pt-BR');
+
+  const esc = (valor) =>
+    String(valor ?? '')
+      .replace(/&/g,'&amp;')
+      .replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;')
+      .replace(/"/g,'&quot;')
+      .replace(/'/g,'&#039;');
+
+  let linhasProdutos = '';
+
+  document.querySelectorAll('.produto').forEach((p, index) => {
+
+    const cod =
+      p.querySelector('.codProduto').value.trim();
+
+    const nome =
+      p.querySelector('.nomeProduto').value.trim();
+
+    const qtd =
+      p.querySelector('.qtd').value || '0';
+
+    const precoTabela =
+      p.querySelector('.precoTabela').value || 'R$ 0,00';
+
+    const descPolitica =
+      p.querySelector('.descPolitica').value || '0,00%';
+
+    const precoPolitica =
+      p.querySelector('.precoPolitica').value || 'R$ 0,00';
+
+    const precoNegociado =
+      p.querySelector('.precoNegociado').value || 'R$ 0,00';
+
+    const descAMais =
+      p.querySelector('.descAMais').value || '0,00%';
+
+    const totalDesconto =
+      p.querySelector('.totalDesconto').value || '0,00%';
+
+    const difItem =
+      p.querySelector('.difItem').value || 'R$ 0,00';
+
+    linhasProdutos += `
+      <tr>
+        <td style="text-align:center;width:5%">${index + 1}</td>
+        <td style="width:8%">${esc(cod)}</td>
+        <td style="width:22%">${esc(nome)}</td>
+        <td style="text-align:center;width:6%">${esc(qtd)}</td>
+        <td style="text-align:right;width:10%">${esc(precoTabela)}</td>
+        <td style="text-align:center;width:8%">${esc(descPolitica)}</td>
+        <td style="text-align:right;width:10%">${esc(precoPolitica)}</td>
+        <td style="text-align:right;width:10%">${esc(precoNegociado)}</td>
+        <td style="text-align:center;width:8%">${esc(descAMais)}</td>
+        <td style="text-align:center;width:8%">${esc(totalDesconto)}</td>
+        <td style="text-align:right;width:10%">${esc(difItem)}</td>
+      </tr>
+    `;
+  });
+
+  const htmlRelatorio = `
+    <div class="printCabecalho">
+      <h2>SOLICITAÇÃO DE DESCONTO</h2>
+      <div class="printData">Data: ${esc(hoje)}</div>
+    </div>
+
+    <table class="printInfo">
+      <tr>
+        <td class="rotulo">Tipo de desconto</td>
+        <td>${esc(tipoDesconto)}</td>
+        <td class="rotulo">Faturamento por</td>
+        <td>${esc(faturamentoPor)}</td>
+      </tr>
+      <tr>
+        <td class="rotulo">Cliente</td>
+        <td colspan="3">${esc(codCliente)}${codCliente || nomeCliente ? ' - ' : ''}${esc(nomeCliente)}</td>
+      </tr>
+      <tr>
+        <td class="rotulo">RCA</td>
+        <td>${esc(codRca)}${codRca || nomeRca ? ' - ' : ''}${esc(nomeRca)}</td>
+        <td class="rotulo">Prazo</td>
+        <td>${esc(prazo)}</td>
+      </tr>
+    </table>
+
+    <table class="printTabela">
+      <thead>
+        <tr>
+          <th>Nº</th>
+          <th>Código</th>
+          <th>Produto</th>
+          <th>Qtd.</th>
+          <th>Preço<br>Tabela</th>
+          <th>%<br>Política</th>
+          <th>Preço<br>Política</th>
+          <th>Preço<br>Negociado</th>
+          <th>Desc.<br>a mais</th>
+          <th>Total<br>desconto</th>
+          <th>Diferença<br>item</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${linhasProdutos}
+      </tbody>
+    </table>
+
+    <table class="printTotais">
+      <tr>
+        <td class="rotulo">TOTAL VALOR DO PEDIDO</td>
+        <td class="valor">${esc(document.getElementById('totalPedido').value)}</td>
+      </tr>
+      <tr>
+        <td class="rotulo">DIFERENÇA DE PREÇO TOTAL</td>
+        <td class="valor">${esc(document.getElementById('difTotal').value)}</td>
+      </tr>
+    </table>
+
+    <div class="printObs">
+      <div class="printObsTitulo">Observação</div>
+      <div>${observacao ? esc(observacao) : 'Nenhuma observação.'}</div>
+    </div>
+
+    <div class="printRodape">
+      Solicitação de Desconto
+    </div>
+  `;
+
+  document.getElementById('relatorioPrint').innerHTML =
+    htmlRelatorio;
+
+  window.print();
 }
 
 async function copyToClipboard(text){
