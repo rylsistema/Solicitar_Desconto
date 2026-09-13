@@ -227,8 +227,11 @@ button {
     color:#111827 !important;
   }
 
-  body * {
-    visibility:hidden !important;
+  /* Esconde completamente a tela original.
+     Usamos display:none porque visibility:hidden ainda
+     reserva espaço e pode criar páginas em branco. */
+  body > *:not(#relatorioPrint) {
+    display:none !important;
   }
 
   #relatorioPrint,
