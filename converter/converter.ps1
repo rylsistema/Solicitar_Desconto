@@ -2,8 +2,9 @@ $produtos = Import-Csv ".\Produtos.csv" -Delimiter ";"
 
 $produtosJson = $produtos | ForEach-Object {
     @{
-        codigo = $_.CODPROD
-        nome   = $_.DESCRICAO
+        codigo 	  = $_.CODPROD
+        nome   	  = $_.DESCRICAO
+	embalagem = $_.EMBALAGEM
     }
 }
 

@@ -7,12 +7,12 @@
 
   <style>
     :root {
-      --bg:#0b1220;
-      --card:#111a2e;
-      --muted:#9fb0d0;
-      --text:#eef2ff;
-      --line:#223153;
-      --accent:#4f8cff;
+  --bg:#0b1220;
+  --card:#F4F7FB;
+  --muted:#52657A;
+  --text:#eef2ff;;
+  --line:#B7C7D9;
+  --accent:#315F9A;
     }
 
     * { box-sizing: border-box; }
@@ -20,7 +20,7 @@
     body {
       margin:0;
       font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: radial-gradient(1200px 600px at 20% 10%, #16254a, transparent), var(--bg);
+      background: var(--bg);
       color: var(--text);
     }
 
@@ -43,12 +43,12 @@
     }
 
     .card {
-      background: rgba(17, 26, 46, .92);
-      border:1px solid rgba(34,49,83,.9);
-      border-radius:18px;
-      padding:18px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.25);
-    }
+  background: #FFFFFF;
+  border:1px solid #E5E1D0;
+  border-radius:18px;
+  padding:18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.10);
+}
 
     .grid {
       display:grid;
@@ -72,19 +72,19 @@
     label {
       display:block;
       font-size:12px;
-      color: var(--muted);
+       color:#315F9A;
       margin:0 0 6px 2px;
     }
 
     input, textarea {
-      width:100%;
-      background:#0f1830;
-      border:1px solid var(--line);
-      color:var(--text);
-      border-radius:12px;
-      padding:11px 12px;
-      outline:none;
-      font-size:14px;
+  width:100%;
+  background:#E7EDF3;
+  border:1px solid #B8C5D1;
+  color:#26384A;
+  border-radius:12px;
+  padding:11px 12px;
+  outline:none;
+  font-size:14px;
     }
 
     textarea {
@@ -98,7 +98,8 @@
 }
 
     input[readonly] {
-      background:#0c1428;
+      background:#D2DCE6;
+      color:#526273;
     }
 
     .radioRow {
@@ -106,7 +107,7 @@
       gap:12px;
       padding:12px;
       border-radius:12px;
-      background:#0f1830;
+      background:#FFFDF5;
       border:1px solid var(--line);
     }
 
@@ -115,8 +116,9 @@
       display:flex;
       align-items:center;
       gap:8px;
-      color:var(--text);
+      color:#315F9A;
       font-size:14px;
+      font-weight:600;
     }
 
     .radioRow input {
@@ -128,14 +130,14 @@
       border-radius:16px;
       padding:14px;
       margin-top:18px;
-      background: rgba(15,24,48,.45);
+      background:#F8F9FB;
     }
 
     .produtoTitulo {
       font-size:15px;
       font-weight:700;
       margin-bottom:12px;
-      color:#cfe0ff;
+       color:#315F9A;
     }
 
     .actions {
@@ -146,15 +148,15 @@
       flex-wrap:wrap;
     }
 
-    button {
-      border:1px solid var(--line);
-      background:#0f1830;
-      color:var(--text);
-      padding:10px 14px;
-      border-radius:12px;
-      cursor:pointer;
-      font-weight:600;
-    }
+button {
+  border:1px solid #D8D3C2;
+  background:#FFFFFF;
+  color:#374151;
+  padding:10px 14px;
+  border-radius:12px;
+  cursor:pointer;
+  font-weight:600;
+}
 
     .btnBonificacao {
   display:inline-flex;
@@ -176,9 +178,10 @@
 }
 
     button.primary {
-      background: rgba(79,140,255,.18);
-      border-color: rgba(79,140,255,.55);
-    }
+  background:#FFF1B8;
+  border-color:#E6CF73;
+  color:#374151;
+}
 
     button.success {
       background: rgba(57,214,156,.12);
@@ -212,7 +215,7 @@
 <div class="wrap">
 
   <div class="title">
-  <h1>Solicitação de desconto</h1>
+  <h1>Solicitação de Desconto</h1>
 
   <a href="bonificacao.html" class="btnBonificacao">
     Solicitação de Bonificação
@@ -291,7 +294,6 @@
         <div class="produto">
 
           <div class="produtoTitulo">Produto</div>
-
           <div style="display:flex;justify-content:flex-end;margin-bottom:12px;">
             <button type="button" onclick="removerProduto(this)">
               ❌ Remover Produto
@@ -751,17 +753,15 @@ if(e.target.classList.contains('codProduto')){
     p => p.codigo === codigo
   );
 
-  if(produto){
+if(produto){
 
-    const bloco = e.target.closest('.produto');
+  const bloco = e.target.closest('.produto');
 
-    bloco.querySelector('.nomeProduto').value =
-    produto.nome;
-
-  }
+  bloco.querySelector('.nomeProduto').value =
+  `${produto.nome} - ${produto.embalagem}`;
 
 }
-
+}
 // BUSCA CLIENTE AUTOMÁTICO
 if(e.target.id === 'codCliente'){
 
