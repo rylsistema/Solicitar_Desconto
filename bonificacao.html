@@ -269,7 +269,9 @@ textarea[readonly] {
 .upper {
   text-transform: uppercase;
 }
-  </style>
+  
+@media print { @page { size:A4; margin:12mm; } body > *:not(#relatorioPrint){display:none!important;} #relatorioPrint{display:block!important;font-family:Arial,sans-serif;color:#1f2937;font-size:10px;} .relHead{display:flex;justify-content:space-between;border-bottom:2px solid #315F9A;padding-bottom:10px;margin-bottom:14px}.relTitle{font-size:20px;font-weight:700;color:#315F9A}.relSec{font-size:12px;font-weight:700;color:#315F9A;margin:14px 0 7px}.relInfo,.relProdutos{width:100%;border-collapse:collapse}.relInfo td,.relProdutos td,.relProdutos th{border:1px solid #d9dee7;padding:6px}.relInfo .lab{font-weight:700;background:#f4f7fb;width:17%}.relProdutos th{background:#315F9A;color:white;font-size:8.5px}.relProdutos td{font-size:8.5px}.relCenter{text-align:center}.relRight{text-align:right}.relTotal{margin:10px 0 0 auto;width:260px;border:1px solid #d9dee7;padding:8px;font-size:12px;font-weight:700;color:#315F9A}.relMotivo{border:1px solid #d9dee7;padding:8px;min-height:42px;white-space:pre-wrap}.relFoot{margin-top:18px;padding-top:7px;border-top:1px solid #d9dee7;text-align:center;font-size:8px;color:#6b7280} }
+</style>
 </head>
 
 <body>
@@ -407,7 +409,7 @@ textarea[readonly] {
       <div class="actions">
         <button type="button" id="limpar">Limpar</button>
         <button type="button" class="success" id="copiar">Copiar</button>
-        <button type="button" class="primary" onclick="window.print()">
+        <button type="button" class="primary" onclick="imprimirRelatorio()">
           Imprimir
         </button>
       </div>
@@ -418,6 +420,7 @@ textarea[readonly] {
 
 </div>
 
+<div id="relatorioPrint" style="display:none"></div>
 <div id="toast" class="toast"></div>
 
 <script>
@@ -663,6 +666,17 @@ function buildWhatsText(){
 
   document.getElementById('whatsPreview').value =
     lines.join('\n');
+}
+
+
+function imprimirRelatorio(){
+ const tipo=document.querySelector('input[name="tipoDesconto"]:checked')?.value||'';
+ const gc=id=>document.getElementById(id)?.value.trim()||'-';
+ const data=new Date().toLocaleDateString('pt-BR');
+ let rows='';
+ document.querySelectorAll('.produto').forEach((p,i)=>{const cod=p.querySelector('.codProduto').value.trim()||'-';const nome=p.querySelector('.nomeProduto').value.trim()||'-';const qtd=parseBRNumber(p.querySelector('.qtd').value);const preco=parseBRNumber(p.querySelector('.precoTabela').value);rows+=`<tr><td class="relCenter">${i+1}</td><td>${cod}</td><td>${nome}</td><td class="relCenter">${qtd}</td><td class="relRight">${formatBRL(preco)}</td><td class="relRight">${formatBRL(qtd*preco)}</td></tr>`});
+ document.getElementById('relatorioPrint').innerHTML=`<div class="relHead"><div><div class="relTitle">SOLICITAÇÃO DE BONIFICAÇÃO</div><div>Relatório de solicitação</div></div><div>Data: <strong>${data}</strong></div></div><div class="relSec">Informações da Solicitação</div><table class="relInfo"><tr><td class="lab">Bnf no Flex?</td><td>${tipo||'-'}</td><td class="lab">Código Cliente</td><td>${gc('codCliente')}</td></tr><tr><td class="lab">Cliente</td><td colspan="3">${gc('nomeCliente')}</td></tr><tr><td class="lab">Código RCA</td><td>${gc('codRca')}</td><td class="lab">RCA</td><td>${gc('nomeRca')}</td></tr></table><div class="relSec">Motivo da Bonificação</div><div class="relMotivo">${gc('motivo')}</div><div class="relSec">Produtos</div><table class="relProdutos"><thead><tr><th>Nº</th><th>Código</th><th>Produto</th><th>Qtd.</th><th>Preço Unitário</th><th>Valor Total</th></tr></thead><tbody>${rows}</tbody></table><div class="relTotal">TOTAL BONIFICAÇÃO: ${gc('totalPedido')}</div><div class="relFoot">Documento gerado pelo sistema de Solicitação de Bonificação.</div>`;
+ window.print();
 }
 
 async function copyToClipboard(text){
