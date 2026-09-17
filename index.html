@@ -693,10 +693,11 @@ function recalc(){
     parseBRNumber(produto.querySelector('.precoNegociado').value);
 
     const precoPolitica =
-    precoTabela * (1 - (descPolitica / 100));
+  precoTabela * (1 - (descPolitica / 100));
 
-    const precoPoliticaArredondado =
+const precoPoliticaArredondado =
   Math.round(precoPolitica * 100) / 100;
+
 
 // Desconto total sobre o preço de tabela
 let descontoTotal = 0;
@@ -706,9 +707,11 @@ if(precoTabela > 0){
     ((precoTabela - precoNegociado) / precoTabela) * 100;
 }
 
+
 // Desconto a mais = desconto total - desconto da política
 const descAMais =
   Math.max(0, descontoTotal - descPolitica);
+
 
 const totalDesc =
   descontoTotal;

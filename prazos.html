@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Solicitação Prazo e Desbloqueio Cliente</title>
+
+  <style>
+    :root {
+        --bg:#F2C94C;
+        --card:#fff;
+        --muted:#6b7280;
+        --text:#1f2937;
+        --line:#d9dee7;
+        --accent:#315F9A
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 28px auto;
+      padding: 0 16px;
+    }
+
+    .title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      gap: 12px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .btnVoltar {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: #1f2937;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 12px;
+    }
+
+    .field {
+      grid-column: span 12;
+    }
+
+    .span-3 {
+      grid-column: span 3;
+    }
+
+    .span-4 {
+      grid-column: span 4;
+    }
+
+    .span-9 {
+      grid-column: span 9;
+    }
+
+    label {
+      display: block;
+      font-size: 12px;
+      color: #315F9A;
+      margin: 0 0 6px 2px;
+      font-weight: 600;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      background: #fff;
+      border: 1px solid var(--line);
+      color: var(--text);
+      border-radius: 12px;
+      padding: 11px 12px;
+      outline: none;
+      font-size: 14px;
+    }
+
+    input[readonly],
+    textarea[readonly] {
+      background: #f3f4f6;
+      color: #374151;
+    }
+
+    textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+    #whatsPreview {
+    height: 180px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+      margin-top: 18px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--text);
+      padding: 10px 14px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    button.success {
+      background: #2F855A;
+      border-color: #276749;
+      color: #fff;
+    }
+
+    @media (max-width: 819px) {
+
+      .span-3,
+      .span-4,
+      .span-9 {
+        grid-column: span 12;
+      }
+
+      .title {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="wrap">
+
+    <div class="title">
+
+      <h1>
+        🚫⚠️ Solicitação Prazo e Desbloqueio Cliente
+      </h1>
+
+      <a href="index.html" class="btnVoltar">
+        ← Solicitação de Desconto
+      </a>
+
+    </div>
+
+    <div class="card">
+
+      <form id="form">
+
+        <div class="grid">
+
+          <!-- CÓDIGO DO RCA -->
+
+          <div class="field span-3">
+
+            <label>
+              Código do RCA
+            </label>
+
+            <input
+              id="codRca"
+              type="text"
+            >
+
+          </div>
+
+
+          <!-- NOME DO RCA -->
+
+          <div class="field span-9">
+
+            <label>
+              Nome do RCA
+            </label>
+
+            <input
+              id="nomeRca"
+              type="text"
+              readonly
+            >
+
+          </div>
+
+
+          <!-- CÓDIGO DO CLIENTE -->
+
+          <div class="field span-3">
+
+            <label>
+              Código do Cliente
+            </label>
+
+            <input
+              id="codCliente"
+              type="text"
+            >
+
+          </div>
+
+
+          <!-- NOME DO CLIENTE -->
+
+          <div class="field span-9">
+
+            <label>
+              Nome do Cliente
+            </label>
+
+            <input
+              id="nomeCliente"
+              type="text"
+              readonly
+            >
+
+          </div>
+
+
+          <!-- PRAZO -->
+
+          <div class="field span-4">
+
+            <label>
+              Prazo
+            </label>
+
+            <select id="prazo">
+
+              <option value="">
+                Selecione o prazo
+              </option>
+
+              <option>
+                7 dias
+              </option>
+
+              <option>
+                14 dias
+              </option>
+
+              <option>
+                14/21 dias
+              </option>
+
+              <option>
+                14/21/28 dias
+              </option>
+
+              <option>
+                21/28 dias
+              </option>
+
+              <option>
+                28 dias
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <!-- VALOR DO PEDIDO -->
+
+          <div class="field span-4">
+
+            <label>
+              Valor do Pedido
+            </label>
+
+            <input
+              id="valorPedido"
+              type="text"
+              placeholder="R$ 0,00"
+            >
+
+          </div>
+
+
+          <!-- MOTIVO / OBSERVAÇÃO -->
+
+          <div class="field">
+
+            <label>
+              Motivo / Observação
+            </label>
+
+            <textarea
+              id="motivo"
+              placeholder="Digite o motivo ou observação..."
+            ></textarea>
+
+          </div>
+
+
+          <!-- TEXTO FORMATADO -->
+
+          <div class="field">
+
+            <label>
+              Texto formatado (prévia)
+            </label>
+
+            <textarea
+              id="whatsPreview"
+              readonly
+            ></textarea>
+
+          </div>
+
+        </div>
+
+
+        <!-- BOTÕES -->
+
+        <div class="actions">
+
+          <button type="button">
+            Limpar
+          </button>
+
+          <button
+            type="button"
+            class="success"
+          >
+            Copiar
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>
+
+<script>
+
+  // ==============================
+  // BASES JSON
+  // ==============================
+
+  let baseClientes = [];
+  let baseRcas = [];
+
+
+  // ==============================
+  // CARREGAR JSON
+  // ==============================
+
+  async function carregarBases() {
+
+    try {
+
+      const respostaClientes =
+        await fetch('clientes.json');
+
+      baseClientes =
+        await respostaClientes.json();
+
+
+      const respostaRcas =
+        await fetch('rcas.json');
+
+      baseRcas =
+        await respostaRcas.json();
+
+
+      console.log('Clientes carregados:', baseClientes);
+      console.log('RCAs carregados:', baseRcas);
+
+    } catch (erro) {
+
+      console.error(
+        'Erro ao carregar os arquivos JSON:',
+        erro
+      );
+
+    }
+
+  }
+
+
+  // ==============================
+  // LOCALIZAR RCA
+  // ==============================
+
+  function buscarRca() {
+
+    const codigo =
+      document.getElementById('codRca').value.trim();
+
+    const nome =
+      document.getElementById('nomeRca');
+
+
+    if (!codigo) {
+
+      nome.value = '';
+      atualizarPreview();
+      return;
+    }
+
+
+    const rca =
+      baseRcas.find(
+        r => String(r.codigo) === String(codigo)
+      );
+
+
+    if (rca) {
+
+      nome.value = rca.nome;
+
+    } else {
+
+      nome.value = '';
+
+    }
+    atualizarPreview();
+
+  }
+
+
+  // ==============================
+  // LOCALIZAR CLIENTE
+  // ==============================
+
+  function buscarCliente() {
+
+    const codigo =
+      document.getElementById('codCliente').value.trim();
+
+    const nome =
+      document.getElementById('nomeCliente');
+
+
+    if (!codigo) {
+
+      nome.value = '';
+      atualizarPreview();
+      return;
+    }
+
+
+    const cliente =
+      baseClientes.find(
+        c => String(c.codigo) === String(codigo)
+      );
+
+
+    if (cliente) {
+
+      nome.value = cliente.nome;
+
+    } else {
+
+      nome.value = '';
+
+    }
+    atualizarPreview();
+  }
+
+
+  // ==============================
+  // EVENTOS
+  // ==============================
+
+  document
+    .getElementById('codRca')
+    .addEventListener('blur', buscarRca);
+
+
+  document
+    .getElementById('codCliente')
+    .addEventListener('blur', buscarCliente);
+
+
+  // ==============================
+  // INICIAR
+  // ==============================
+
+  carregarBases();
+
+  // ==============================
+// MÁSCARA VALOR DO PEDIDO
+// ==============================
+
+const valorPedido =
+  document.getElementById('valorPedido');
+
+valorPedido.addEventListener('input', function () {
+
+  let valor = this.value.replace(/\D/g, '');
+
+  if (!valor) {
+    this.value = '';
+    return;
+  }
+
+  valor = Number(valor) / 100;
+
+  this.value = valor.toLocaleString('pt-BR', {
+    style: 'currency',
+    currency: 'BRL'
+  });
+
+});
+
+// ==============================
+// PRÉVIA DO WHATSAPP
+// ==============================
+
+function atualizarPreview() {
+
+  const codRca =
+    document.getElementById('codRca').value.trim();
+
+  const nomeRca =
+    document.getElementById('nomeRca').value.trim();
+
+  const codCliente =
+    document.getElementById('codCliente').value.trim();
+
+  const nomeCliente =
+    document.getElementById('nomeCliente').value.trim();
+
+  const prazo =
+    document.getElementById('prazo').value;
+
+  const valorPedido =
+    document.getElementById('valorPedido').value.trim();
+
+  const motivo =
+    document.getElementById('motivo').value.trim();
+
+
+  let texto = '';
+
+  texto += '🚫⚠️ *SOLICITAÇÃO PRAZO E DESBLOQUEIO CLIENTE*\n';
+  texto += '\n';
+
+  texto += `• *RCA:* ${codRca} - ${nomeRca}\n`;
+  texto += `• *Cliente:* ${codCliente} - ${nomeCliente}\n`;
+  texto += `• *Prazo:* ${prazo}\n`;
+  texto += `• *Valor do Pedido:* ${valorPedido}\n`;
+
+  if (motivo) {
+    texto += `• *Motivo/Observação:* ${motivo}\n`;
+  }
+
+  document.getElementById('whatsPreview').value = texto;
+}
+
+
+// ==============================
+// ATUALIZA A PRÉVIA AUTOMATICAMENTE
+// ==============================
+
+document
+  .getElementById('codRca')
+  .addEventListener('input', atualizarPreview);
+
+document
+  .getElementById('codCliente')
+  .addEventListener('input', atualizarPreview);
+
+document
+  .getElementById('prazo')
+  .addEventListener('change', atualizarPreview);
+
+document
+  .getElementById('valorPedido')
+  .addEventListener('input', atualizarPreview);
+
+document
+  .getElementById('motivo')
+  .addEventListener('input', atualizarPreview);
+
+</script>
