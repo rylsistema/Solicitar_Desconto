@@ -843,23 +843,33 @@ if(observacao){
     const precoNegociado =
     parseBRNumber(p.querySelector('.precoNegociado').value);
 
-    const precoPolitica =
-    precoTabela * (1 - (descPolitica / 100));
+const precoPolitica =
+  precoTabela * (1 - (descPolitica / 100));
 
-    let descAMais = 0;
+const precoPoliticaArredondado =
+  Math.round(precoPolitica * 100) / 100;
 
-    if(precoPolitica > 0){
-      descAMais =
-      (precoPolitica - precoNegociado) / precoPolitica;
-    }
 
-    descAMais = Math.max(0, descAMais);
+// Desconto total sobre o preço de tabela
+let descontoTotal = 0;
 
-    const totalDesc =
-    descPolitica + (descAMais * 100);
+if(precoTabela > 0){
+  descontoTotal =
+    ((precoTabela - precoNegociado) / precoTabela) * 100;
+}
 
-    const difItem =
-    (precoPolitica - precoNegociado) * qtd;
+
+// Desconto a mais = desconto total - desconto da política
+const descAMais =
+  Math.max(0, descontoTotal - descPolitica);
+
+
+const totalDesc =
+  descontoTotal;
+
+
+const difItem =
+  (precoPoliticaArredondado - precoNegociado) * qtd;
 
     
     lines.push(`• ${cod} - ${nome}`);
@@ -868,13 +878,11 @@ if(observacao){
     lines.push(`% Desconto Política: ${descPolitica.toLocaleString('pt-BR',{
       minimumFractionDigits:2
     })}%`);
-    lines.push(`Preço da Política: ${formatBRL(precoPolitica)}`);
+    lines.push(`Preço da Política: ${formatBRL(precoPoliticaArredondado)}`);
     lines.push(`Preço Negociado: ${formatBRL(precoNegociado)}`);
-    lines.push(`Desc. a Mais: ${(descAMais * 100).toLocaleString('pt-BR',{
-      minimumFractionDigits:2
-    })}%`);
-    lines.push(`*Total de Desconto:* ${totalDesc.toLocaleString('pt-BR',{
-      minimumFractionDigits:2
+    lines.push(`Desc. a Mais: ${descAMais.toLocaleString('pt-BR',{
+      minimumFractionDigits:2,
+      maximumFractionDigits:2
     })}%`);
     lines.push(`Diferença Total do Item: ${formatBRL(difItem)}`);
 
