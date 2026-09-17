@@ -884,6 +884,12 @@ const difItem =
       minimumFractionDigits:2,
       maximumFractionDigits:2
     })}%`);
+
+    lines.push(`*Total de Desconto:* ${totalDesc.toLocaleString('pt-BR',{
+      minimumFractionDigits:2,
+      maximumFractionDigits:2
+    })}%`);
+
     lines.push(`Diferença Total do Item: ${formatBRL(difItem)}`);
 
   });
