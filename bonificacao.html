@@ -250,21 +250,29 @@ textarea[readonly] {
   color:#FFFFFF;
     }
 
-    .toast {
-      position:fixed;
-      right:16px;
-      bottom:16px;
-      background:#0f1830;
-      border:1px solid var(--line);
-      padding:10px 12px;
-      border-radius:12px;
-      opacity:0;
-      transition:.2s;
-    }
+.toast {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  background: #0b1220;
+  border: 1px solid #B7C7D9;
+  padding: 10px 16px;
+  border-radius: 16px;
+  color: #FFFFFF;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, .3);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity .18s ease, transform .18s ease;
+  pointer-events: none;
+  font-size: 16px;
+  font-weight: 400;
+  z-index: 9999;
+}
 
-    .toast.show {
-      opacity:1;
-    }
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 .upper {
   text-transform: uppercase;
@@ -482,17 +490,21 @@ function clamp(n,a,b){
   return Math.min(Math.max(n,a),b);
 }
 
-function showToast(msg){
+function showToast(msg) {
 
-  const t = document.getElementById('toast');
+  const t =
+    document.getElementById('toast');
 
   t.textContent = msg;
 
   t.classList.add('show');
 
-  setTimeout(()=>{
-    t.classList.remove('show');
-  },1800);
+  clearTimeout(showToast._timer);
+
+  showToast._timer =
+    setTimeout(() => {
+      t.classList.remove('show');
+    }, 1800);
 }
 
 function adicionarProduto(){
