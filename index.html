@@ -961,6 +961,10 @@ function imprimirRelatorio(){
     const precoNegociado =
       p.querySelector('.precoNegociado').value || 'R$ 0,00';
 
+    const totalItem =
+      formatBRL(
+      parseBRNumber(qtd) * parseBRNumber(precoNegociado)
+   );
     const descAMais =
       p.querySelector('.descAMais').value || '0,00%';
 
@@ -980,6 +984,7 @@ function imprimirRelatorio(){
         <td style="text-align:center;width:8%">${esc(descPolitica)}</td>
         <td style="text-align:right;width:10%">${esc(precoPolitica)}</td>
         <td style="text-align:right;width:10%">${esc(precoNegociado)}</td>
+        <td style="text-align:right;width:9%">${esc(totalItem)}</td>
         <td style="text-align:center;width:8%">${esc(descAMais)}</td>
         <td style="text-align:center;width:8%">${esc(totalDesconto)}</td>
         <td style="text-align:right;width:10%">${esc(difItem)}</td>
@@ -1023,6 +1028,7 @@ function imprimirRelatorio(){
           <th>%<br>Política</th>
           <th>Preço<br>Política</th>
           <th>Preço<br>Negociado</th>
+          <th>Total<br>Item</th>
           <th>Desc.<br>a mais</th>
           <th>Total<br>desconto</th>
           <th>Diferença<br>item</th>
