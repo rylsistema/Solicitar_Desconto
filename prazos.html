@@ -352,15 +352,16 @@
 
         <div class="actions">
 
-          <button type="button">
-            Limpar
+          <button type="button" onclick="limparFormulario()">
+           Limpar
           </button>
 
           <button
-            type="button"
-            class="success"
+          type="button"
+          class="success"
+          onclick="copiarMensagem()"
           >
-            Copiar
+          Copiar
           </button>
 
         </div>
@@ -617,5 +618,56 @@ document
 document
   .getElementById('motivo')
   .addEventListener('input', atualizarPreview);
+
+  // ==============================
+// BOTÃO LIMPAR
+// ==============================
+
+function limparFormulario() {
+
+  document.getElementById('codRca').value = '';
+  document.getElementById('nomeRca').value = '';
+
+  document.getElementById('codCliente').value = '';
+  document.getElementById('nomeCliente').value = '';
+
+  document.getElementById('prazo').value = '';
+
+  document.getElementById('valorPedido').value = '';
+
+  document.getElementById('motivo').value = '';
+
+  document.getElementById('whatsPreview').value = '';
+
+}
+
+// ==============================
+// BOTÃO COPIAR
+// ==============================
+
+function copiarMensagem() {
+
+  const texto =
+    document.getElementById('whatsPreview').value;
+
+  if (!texto.trim()) {
+    alert('Não há mensagem para copiar.');
+    return;
+  }
+
+  navigator.clipboard.writeText(texto)
+    .then(() => {
+      alert('Mensagem copiada com sucesso!');
+    })
+    .catch(() => {
+      alert('Não foi possível copiar a mensagem.');
+    });
+
+}
+// ==============================
+// INICIAR PRÉVIA
+// ==============================
+
+atualizarPreview();
 
 </script>
