@@ -501,8 +501,8 @@
 
 
     const cliente =
-      baseClientes.find(
-        c => String(c.codigo) === String(codigo)
+    baseClientes.find(
+    c => String(c.codigo).trim() === String(codigo).trim()
       );
 
 
