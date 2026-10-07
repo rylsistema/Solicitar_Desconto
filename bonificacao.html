@@ -760,7 +760,7 @@ document.addEventListener('input', function(e){
 
     const cliente =
       baseClientes.find(
-        c => String(c.codigo).trim() === codigo
+      c => String(c.codigo).trim() === String(codigo).trim()
       );
 
     if(cliente){
