@@ -1600,7 +1600,7 @@
         "codigo":  "842"
     },
     {
-        "nome":  "SM OUR 3 - ROTA VAGA(C/CLIENTE)",
+        "nome":  "SM OUR 3 - YARA MAGALHAES SANTOS RAMOS",
         "codigo":  "723"
     },
     {
@@ -3264,7 +3264,7 @@
         "codigo":  "1512"
     },
     {
-        "nome":  "GURUPI-CLAUDIONOR LOPES MACHADO",
+        "nome":  "GURUPI-CLAUDIONOR LOPES MACHADO(DESL",
         "codigo":  "921"
     },
     {
@@ -3336,7 +3336,7 @@
         "codigo":  "1125"
     },
     {
-        "nome":  "SM JATAI - ULISSES SEVERINO DE SOUZA",
+        "nome":  "SM JATAI - ULISSES SEVERINO DE SOUZA(DES",
         "codigo":  "915"
     },
     {
@@ -3354,6 +3354,10 @@
     {
         "nome":  "SM RIO VERDE-GIOVANE FRANCISCO FERREIRA",
         "codigo":  "773"
+    },
+    {
+        "nome":  "CATALAO 2- ROTA VAGA (C/CLIENTE)",
+        "codigo":  "926"
     },
     {
         "nome":  "JARAG-ADELIANE PINTO DE BASTOS",
@@ -3396,7 +3400,7 @@
         "codigo":  "1128"
     },
     {
-        "nome":  "AP4 OUR-MATHEUS MENDES DOS SANTOS",
+        "nome":  "AP4 OUR-MATHEUS MENDES DOS SANTOS(DESLIG",
         "codigo":  "1131"
     },
     {
@@ -3464,7 +3468,7 @@
         "codigo":  "886"
     },
     {
-        "nome":  "CACU - ROTA VAGA (S/CLI)",
+        "nome":  "CACU - ROTA VAGA (C/CLI)",
         "codigo":  "887"
     },
     {
@@ -3474,6 +3478,10 @@
     {
         "nome":  "GUARAI-EUDES JUNIOR RODRIGUES SILVA(DESL",
         "codigo":  "877"
+    },
+    {
+        "nome":  "SM 3 - ROTA VAGA",
+        "codigo":  "925"
     },
     {
         "nome":  "JATAI - WELLINGTON SILVA LOPES",
@@ -3486,6 +3494,10 @@
     {
         "nome":  "SM DIA 3 - JHENIFFER PIRES DA SILVA(DESL",
         "codigo":  "874"
+    },
+    {
+        "nome":  "COLINAS - ROTA VAGA (C/CLI)",
+        "codigo":  "889"
     },
     {
         "nome":  "ARAGUATINS - DIEGO GONCALVES LEITE(DESL",
@@ -3524,7 +3536,7 @@
         "codigo":  "900"
     },
     {
-        "nome":  "ARAGUATINS-ROTA VAGA (C/CLI)",
+        "nome":  "ARAGUATINS-REILANIA DOS SANTOS FERREIRA",
         "codigo":  "879"
     },
     {
@@ -3540,7 +3552,7 @@
         "codigo":  "1223"
     },
     {
-        "nome":  "COLINAS- LUIZ FERNANDO OLIVEIRA DE SOUZA",
+        "nome":  "COLINAS- LUIZ FERNANDO OLIVEIRA (DESL/ S",
         "codigo":  "884"
     },
     {
@@ -3552,7 +3564,7 @@
         "codigo":  "918"
     },
     {
-        "nome":  "CLT-MATHEUS CARVALHO DAMASCENO",
+        "nome":  "CLT- ROTA VAGA",
         "codigo":  "1100"
     },
     {
@@ -3652,7 +3664,7 @@
         "codigo":  "1227"
     },
     {
-        "nome":  "TRIND OUR- ROTA VAGA (C/ CLI)",
+        "nome":  "TRIND OUR- JOAO VITOR COSTA T. SALVIANO",
         "codigo":  "885"
     },
     {
@@ -3668,7 +3680,7 @@
         "codigo":  "1525"
     },
     {
-        "nome":  "GOIANESIA - VALDILEI RODRIGUES FERREIRA",
+        "nome":  "GOIANESIA - VALDILEI RODRIGUES (DESL S/C",
         "codigo":  "1526"
     },
     {
@@ -3726,5 +3738,17 @@
     {
         "nome":  "GURUPI - MARCUS VINICIUS FERREIRA (DESL",
         "codigo":  "920"
+    },
+    {
+        "nome":  "SM JATAI - ROTA VAGA (C/ CLIENTE)",
+        "codigo":  "923"
+    },
+    {
+        "nome":  "GURUPI - ROTA VAGA (C/ CLIENTE)",
+        "codigo":  "924"
+    },
+    {
+        "nome":  "AP4 OUR - ROTA VAGA (C/CLIENTE)",
+        "codigo":  "1138"
     }
 ]

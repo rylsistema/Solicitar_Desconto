@@ -41331,7 +41331,7 @@
     },
     {
         "codigo":  "10733",
-        "nome":  "BUSCHLE-GELADINHO AMERICADO 55ML C/40UN",
+        "nome":  "BUSCHLE-GELADINHO AMERICANO 55ML C/40UN",
         "embalagem":  "40X55ML"
     },
     {
@@ -43195,6 +43195,11 @@
         "embalagem":  "12X1LT"
     },
     {
+        "codigo":  "11633",
+        "nome":  "FLORESTAL-EXPOSIT ACRILIC LAMINADO/DROPS",
+        "embalagem":  "1UN"
+    },
+    {
         "codigo":  "11234",
         "nome":  "BOBINA(45X0,0080)L.ROUP O.CASA 1,6K PEBD",
         "embalagem":  "1UN"
@@ -43296,7 +43301,7 @@
     },
     {
         "codigo":  "11508",
-        "nome":  "F-MONO PORCAO BALA BRAZILIAN COFFEE",
+        "nome":  "F-MONO PORCAO BALA BRAZILIAN COFFEE DP",
         "embalagem":  "12X18G"
     },
     {
@@ -43880,6 +43885,11 @@
         "embalagem":  "1X60G"
     },
     {
+        "codigo":  "11630",
+        "nome":  "BNB-DISPLAY DE CHAO B3ST",
+        "embalagem":  "1UN"
+    },
+    {
         "codigo":  "11187",
         "nome":  "D.GRANO GOLD-BORDO S/ALCOOL SUCO UVA INT",
         "embalagem":  "1X750ML"
@@ -43957,6 +43967,16 @@
     {
         "codigo":  "11257",
         "nome":  "CAIXA PAP. OND. CAIXA OURO CASA",
+        "embalagem":  "1UN"
+    },
+    {
+        "codigo":  "11629",
+        "nome":  "FURIOSO- ENERG.LARANJA ZERO 473ML",
+        "embalagem":  "1X473ML"
+    },
+    {
+        "codigo":  "11632",
+        "nome":  "LAVADORA ALTA PRESSAO WAP1500PSI 220V",
         "embalagem":  "1UN"
     },
     {
@@ -44090,6 +44110,21 @@
         "embalagem":  "1UN"
     },
     {
+        "codigo":  "11631",
+        "nome":  "COWBOYS - CHA ALCOOL VODKA+SAQUE PESSEGO",
+        "embalagem":  "1X350ML"
+    },
+    {
+        "codigo":  "11634",
+        "nome":  "FRITADEIRA AIR FRYER BRITANIA 6,5L 220V",
+        "embalagem":  "1UN"
+    },
+    {
+        "codigo":  "11635",
+        "nome":  "CLIMATIZADOR DE AR VENTISOL 60L150W",
+        "embalagem":  "1UN"
+    },
+    {
         "codigo":  "11140",
         "nome":  "FELTRIN-EXPOSITOR FIXO C/PES 72 GANCHOS",
         "embalagem":  "1UN"
@@ -44138,6 +44173,26 @@
         "codigo":  "11457",
         "nome":  "QUADRICICLO - MINI ELETRICO 6V LARANJA",
         "embalagem":  "1UN"
+    },
+    {
+        "codigo":  "11625",
+        "nome":  "F.GOLDEN-SEM.HORT.ALFACE RAFAELA AMERICA",
+        "embalagem":  "10X2,5G"
+    },
+    {
+        "codigo":  "11626",
+        "nome":  "F.GOLDEN-SEM.HORT.PEPINO VERDE COMPRIDO",
+        "embalagem":  "10X5G"
+    },
+    {
+        "codigo":  "11627",
+        "nome":  "F.GOLDEN-SEM.HORT.RABANETE CRISMON GIGAN",
+        "embalagem":  "10X10G"
+    },
+    {
+        "codigo":  "11628",
+        "nome":  "FELTRIN-SEM.HORT.MELANCIA FAIRFAX",
+        "embalagem":  "25X1G"
     },
     {
         "codigo":  "11309",
@@ -44911,7 +44966,7 @@
     },
     {
         "codigo":  "11524",
-        "nome":  "F-MONO PORCAO BALA DO CORACAO",
+        "nome":  "F-MONO PORCAO BALA DO CORACAO DP",
         "embalagem":  "12X20G"
     },
     {
@@ -45406,7 +45461,7 @@
     },
     {
         "codigo":  "11516",
-        "nome":  "F-MONO PORCAO BALA GOMA GOMINT",
+        "nome":  "F-MONO PORCAO BALA GOMA GOMINT DP",
         "embalagem":  "12X15G"
     },
     {
@@ -45416,8 +45471,8 @@
     },
     {
         "codigo":  "11518",
-        "nome":  "F-MONO PORCAO BALA I MINT",
-        "embalagem":  "12X216G"
+        "nome":  "F-MONO PORCAO BALA I MINT DP",
+        "embalagem":  "12X18G"
     },
     {
         "codigo":  "11322",
@@ -45511,7 +45566,7 @@
     },
     {
         "codigo":  "11531",
-        "nome":  "F-MARSH. FOFS TWIST VAMP RECH. MORANGO",
+        "nome":  "F-MARSH. TWIST VAMP RECH+COBERT MORANGO",
         "embalagem":  "1X220G"
     },
     {
@@ -45521,7 +45576,7 @@
     },
     {
         "codigo":  "11534",
-        "nome":  "F-MONO PORCAO BALA GOMA FLOPI SORTIDO",
+        "nome":  "F-MONO PORCAO BALA GOMA FLOPI SORT. DP",
         "embalagem":  "12X15G"
     },
     {
@@ -45736,7 +45791,7 @@
     },
     {
         "codigo":  "11520",
-        "nome":  "F-LATA BALA I MINT",
+        "nome":  "F-LATA BALA IMINT",
         "embalagem":  "8X52,5G"
     },
     {

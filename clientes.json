@@ -4280,7 +4280,7 @@
         "codigo":  "40997"
     },
     {
-        "nome":  "COML. CHICO",
+        "nome":  "MELIO",
         "codigo":  "47325"
     },
     {
@@ -5620,7 +5620,7 @@
         "codigo":  "2080"
     },
     {
-        "nome":  "SUPER CENTRO ATACADISTA ",
+        "nome":  "SUPER CENTRO ATACADISTA",
         "codigo":  "42742"
     },
     {
@@ -8916,7 +8916,7 @@
         "codigo":  "23453"
     },
     {
-        "nome":  "SUP. UNIAO ",
+        "nome":  "SUP. UNIAO",
         "codigo":  "23454"
     },
     {
@@ -17884,7 +17884,7 @@
         "codigo":  "13949"
     },
     {
-        "nome":  "SUP. LEVE(ST.LESTE UNIVERSITARIO)",
+        "nome":  "SUPERMERCADO LEVE",
         "codigo":  "10610"
     },
     {
@@ -32324,7 +32324,7 @@
         "codigo":  "21163"
     },
     {
-        "nome":  "QUARTETTO ATACADO (PLANO DIRETOR SUL)",
+        "nome":  "QUARTETTO ATACADO",
         "codigo":  "21166"
     },
     {
@@ -32548,7 +32548,7 @@
         "codigo":  "21202"
     },
     {
-        "nome":  "SUP. VEN-KA T9",
+        "nome":  "SUP. VEN-KA",
         "codigo":  "19851"
     },
     {
@@ -34616,7 +34616,7 @@
         "codigo":  "20435"
     },
     {
-        "nome":  "GALETERIA BRASIL",
+        "nome":  "GALETERIA BRASIL ",
         "codigo":  "20436"
     },
     {
@@ -34628,7 +34628,7 @@
         "codigo":  "22149"
     },
     {
-        "nome":  "SUP. LUCIANO",
+        "nome":  "SUP. LUCIANO\u0027S",
         "codigo":  "22150"
     },
     {
@@ -36140,7 +36140,7 @@
         "codigo":  "23355"
     },
     {
-        "nome":  "SUP. VITORIA ",
+        "nome":  "SUP. VITORIA",
         "codigo":  "23284"
     },
     {
@@ -36158,6 +36158,14 @@
     {
         "nome":  "DEPOSITO DE GAS CRISTAL ",
         "codigo":  "23358"
+    },
+    {
+        "nome":  "MERCADO ATHAIDES",
+        "codigo":  "51358"
+    },
+    {
+        "nome":  "SUPERMARQUES",
+        "codigo":  "51364"
     },
     {
         "nome":  "MINIMERCADO PRIMAVERA ",
@@ -48352,7 +48360,7 @@
         "codigo":  "26686"
     },
     {
-        "nome":  "SUP. COSTA ",
+        "nome":  "SUP. COSTA",
         "codigo":  "26687"
     },
     {
@@ -49088,7 +49096,7 @@
         "codigo":  "28019"
     },
     {
-        "nome":  "SORVETERIA E DISTRIBUIDORA ZE CAIPIRA ",
+        "nome":  "SORVETERIA E DISTRIBUIDORA ZE CAIPIRA",
         "codigo":  "29754"
     },
     {
@@ -52940,7 +52948,7 @@
         "codigo":  "30048"
     },
     {
-        "nome":  "FAST BEER ",
+        "nome":  "FAST BEER",
         "codigo":  "30067"
     },
     {
@@ -54672,7 +54680,7 @@
         "codigo":  "27954"
     },
     {
-        "nome":  "COML. SIRQUEIRA",
+        "nome":  "COML.2 IRMAOS",
         "codigo":  "27960"
     },
     {
@@ -59404,7 +59412,7 @@
         "codigo":  "29323"
     },
     {
-        "nome":  "COML. CENTRAL ",
+        "nome":  "COML. CENTRAL",
         "codigo":  "30068"
     },
     {
@@ -63512,7 +63520,7 @@
         "codigo":  "31304"
     },
     {
-        "nome":  "MERCEARIA PAIS E FILHAS",
+        "nome":  "MERCEARIA PAIS E FILHAS LTDA",
         "codigo":  "31210"
     },
     {
@@ -64188,7 +64196,7 @@
         "codigo":  "30600"
     },
     {
-        "nome":  "MINI MERCADO JM ",
+        "nome":  "SUP. E DISTRIBUIDORA J ALVES",
         "codigo":  "30608"
     },
     {
@@ -64228,7 +64236,7 @@
         "codigo":  "32028"
     },
     {
-        "nome":  "ATACADAO CERVEJA \u0026 CIA ",
+        "nome":  "ATACADAO CERVEJA \u0026 CIA",
         "codigo":  "32056"
     },
     {
@@ -65752,7 +65760,7 @@
         "codigo":  "30949"
     },
     {
-        "nome":  "COML. FREITAS ",
+        "nome":  "COML. FREITAS",
         "codigo":  "30987"
     },
     {
@@ -75944,7 +75952,7 @@
         "codigo":  "33661"
     },
     {
-        "nome":  "COMERCIAL DO GOIANO ",
+        "nome":  "COML. DO GOIANO",
         "codigo":  "33662"
     },
     {
@@ -76480,7 +76488,7 @@
         "codigo":  "33777"
     },
     {
-        "nome":  "CLEONICE RIBEIRO MARTINS FALCAO - ME ",
+        "nome":  "CLEONICE RIBEIRO MARTINS FALCAO",
         "codigo":  "33778"
     },
     {
@@ -86404,7 +86412,7 @@
         "codigo":  "46201"
     },
     {
-        "nome":  "MERCEARIA SOUZA",
+        "nome":  "SUPERSOUZA",
         "codigo":  "46202"
     },
     {
@@ -89916,7 +89924,7 @@
         "codigo":  "49129"
     },
     {
-        "nome":  "BREJA DIST.DE BEBIDAS E CONVENIENCIA",
+        "nome":  "LHF DISTRIBUIDORA DE BEBIDAS",
         "codigo":  "49216"
     },
     {
@@ -91272,11 +91280,11 @@
         "codigo":  "49672"
     },
     {
-        "nome":  "COMERCIAL COUTO",
+        "nome":  "COML. COUTO",
         "codigo":  "49673"
     },
     {
-        "nome":  "COMERCIAL POPULAR",
+        "nome":  "COML. POPULAR",
         "codigo":  "49674"
     },
     {
@@ -94600,7 +94608,7 @@
         "codigo":  "50892"
     },
     {
-        "nome":  "SUP.LEVE(VL.ROSA)",
+        "nome":  "SUP. LEVE",
         "codigo":  "50896"
     },
     {
@@ -94686,10 +94694,6 @@
     {
         "nome":  "SUPER FIDEL SUPERMERCADOS",
         "codigo":  "49109"
-    },
-    {
-        "nome":  "FABIM SUPERMERCADO",
-        "codigo":  "49226"
     },
     {
         "nome":  "LOJA DA FABRICA CRUZEIRO",
@@ -96240,12 +96244,20 @@
         "codigo":  "50025"
     },
     {
-        "nome":  "BOX24H",
+        "nome":  "SELECTA 24H",
         "codigo":  "51055"
     },
     {
         "nome":  "COML.SOL NASCENTE",
         "codigo":  "51186"
+    },
+    {
+        "nome":  "MERCADAO DA ECONOMIA (PQ.OESTE INDUSTRI)",
+        "codigo":  "51351"
+    },
+    {
+        "nome":  "EMPORIO VERDE",
+        "codigo":  "51400"
     },
     {
         "nome":  "PANIF. E LANCHONETE DO IRMAO",
@@ -96258,6 +96270,10 @@
     {
         "nome":  "SUP.MARTINS LOJA 5",
         "codigo":  "51265"
+    },
+    {
+        "nome":  "BEM-TE-VI SUPERMERCADO",
+        "codigo":  "51371"
     },
     {
         "nome":  "PUCA TABACARIA E CONVENIENCIA",
@@ -96276,6 +96292,18 @@
         "codigo":  "51274"
     },
     {
+        "nome":  "MERCADINHO IDEAL",
+        "codigo":  "51372"
+    },
+    {
+        "nome":  "PANI FRIOS",
+        "codigo":  "51377"
+    },
+    {
+        "nome":  "PANI FRIOS",
+        "codigo":  "51378"
+    },
+    {
         "nome":  "COML.NS",
         "codigo":  "51075"
     },
@@ -96290,6 +96318,10 @@
     {
         "nome":  "SUP.ELDORADO",
         "codigo":  "51217"
+    },
+    {
+        "nome":  "SUP. DO POVO ATACAREJO",
+        "codigo":  "51389"
     },
     {
         "nome":  "SUPER CRISTAL",
@@ -96348,6 +96380,10 @@
         "codigo":  "51331"
     },
     {
+        "nome":  "SUP.SUPER AMIGOS",
+        "codigo":  "51342"
+    },
+    {
         "nome":  "SUP.BOM PRECO",
         "codigo":  "51123"
     },
@@ -96362,6 +96398,10 @@
     {
         "nome":  "MINI BOX \u0026 DISTRIBUIDORA BRITO",
         "codigo":  "51221"
+    },
+    {
+        "nome":  "SUP. TOKIO",
+        "codigo":  "51336"
     },
     {
         "nome":  "SUPER CHAFARIZ",
@@ -96386,6 +96426,18 @@
     {
         "nome":  "SUP.MARTINS LOJA 03",
         "codigo":  "51264"
+    },
+    {
+        "nome":  "DACOLONIA",
+        "codigo":  "51360"
+    },
+    {
+        "nome":  "DIST. MARTINS",
+        "codigo":  "51381"
+    },
+    {
+        "nome":  "HIPER MARTINS",
+        "codigo":  "51385"
     },
     {
         "nome":  "DUCOCO ALIMENTOS S/A",
@@ -96430,6 +96482,26 @@
     {
         "nome":  "SUP.AVENIDA",
         "codigo":  "51324"
+    },
+    {
+        "nome":  "EMPORIO SUPERPRATIKO",
+        "codigo":  "51337"
+    },
+    {
+        "nome":  "PANIFICADORA DELICIA DO TRIGO",
+        "codigo":  "51349"
+    },
+    {
+        "nome":  "CASA DE CARNE JM",
+        "codigo":  "51361"
+    },
+    {
+        "nome":  "DIST. LIDERANCA",
+        "codigo":  "51362"
+    },
+    {
+        "nome":  "CASA PETERLONGO",
+        "codigo":  "51391"
     },
     {
         "nome":  "MG SPORTES",
@@ -96496,6 +96568,10 @@
         "codigo":  "51127"
     },
     {
+        "nome":  "CAMPO VERDE COMERCIO DE ALIMENTOS",
+        "codigo":  "51392"
+    },
+    {
         "nome":  "SUP. CENTRAL",
         "codigo":  "51048"
     },
@@ -96524,8 +96600,20 @@
         "codigo":  "51251"
     },
     {
+        "nome":  "DISQUE BEBIDAS DO BATALHA",
+        "codigo":  "51344"
+    },
+    {
+        "nome":  "RESTAURANTE VAI E VEM",
+        "codigo":  "51369"
+    },
+    {
         "nome":  "19.653.217 ERIKA JORDAN DA SILVA SOUZA",
         "codigo":  "51012"
+    },
+    {
+        "nome":  "COMERCIAL ROZAL",
+        "codigo":  "51404"
     },
     {
         "nome":  "SUPER QUALITY SUPERMERCADO",
@@ -96552,6 +96640,10 @@
         "codigo":  "50851"
     },
     {
+        "nome":  "SN DISTRIBUICAO",
+        "codigo":  "51395"
+    },
+    {
         "nome":  "SUPERMIX",
         "codigo":  "51136"
     },
@@ -96562,6 +96654,10 @@
     {
         "nome":  "EMPORIO SANTOS",
         "codigo":  "51181"
+    },
+    {
+        "nome":  "SUP. CANDANGO",
+        "codigo":  "51354"
     },
     {
         "nome":  "BENDITO CAFE",
@@ -96590,6 +96686,10 @@
     {
         "nome":  "RIOS SUPERMERCADOS",
         "codigo":  "51242"
+    },
+    {
+        "nome":  "COML.BLACK",
+        "codigo":  "51343"
     },
     {
         "nome":  "COML.SAO GABRIEL",
@@ -96648,6 +96748,10 @@
         "codigo":  "51311"
     },
     {
+        "nome":  "ARMAZEM AGRO FERRAGISTA",
+        "codigo":  "51334"
+    },
+    {
         "nome":  "EMPORIO ELITE",
         "codigo":  "51146"
     },
@@ -96656,8 +96760,16 @@
         "codigo":  "51273"
     },
     {
+        "nome":  "CRC ADEGA TRABACARIA",
+        "codigo":  "51341"
+    },
+    {
         "nome":  "J N DISTRIBUIDORA",
         "codigo":  "51203"
+    },
+    {
+        "nome":  "MINI BOX ROGER MOURA",
+        "codigo":  "51350"
     },
     {
         "nome":  "SUPERBOX SAMPAIO",
@@ -96724,8 +96836,16 @@
         "codigo":  "51004"
     },
     {
+        "nome":  "DISTR. VIEIRA",
+        "codigo":  "51333"
+    },
+    {
         "nome":  "SUPER MORADA NOVA",
         "codigo":  "51033"
+    },
+    {
+        "nome":  "DATA ID",
+        "codigo":  "51397"
     },
     {
         "nome":  "REDE SUPER",
@@ -96756,6 +96876,10 @@
         "codigo":  "50714"
     },
     {
+        "nome":  "MERCADINHO E DIST. CASTRO",
+        "codigo":  "51382"
+    },
+    {
         "nome":  "SUP.VITRIA",
         "codigo":  "51149"
     },
@@ -96778,6 +96902,14 @@
     {
         "nome":  "CASA DAS FERRAMENTAS",
         "codigo":  "51031"
+    },
+    {
+        "nome":  "MERCADINHO BELA VISTA",
+        "codigo":  "51367"
+    },
+    {
+        "nome":  "FABIM SUPERMERCADO",
+        "codigo":  "49226"
     },
     {
         "nome":  "PALMAS BRASIL SUPERMERCADO",
@@ -96810,6 +96942,14 @@
     {
         "nome":  "REDE DE FESTA(JD.DA LUZ)",
         "codigo":  "51011"
+    },
+    {
+        "nome":  "LIDERMIX",
+        "codigo":  "51353"
+    },
+    {
+        "nome":  "COMERCIAL ALENCAR",
+        "codigo":  "51402"
     },
     {
         "nome":  "MERCADINHO AGM",
@@ -96856,6 +96996,10 @@
         "codigo":  "51328"
     },
     {
+        "nome":  "LANCHONETE MANA",
+        "codigo":  "51357"
+    },
+    {
         "nome":  "SUP.ELDORADO",
         "codigo":  "51295"
     },
@@ -96866,6 +97010,18 @@
     {
         "nome":  "SUP.GONCALVES",
         "codigo":  "51253"
+    },
+    {
+        "nome":  "DRAGON ACADEMIA",
+        "codigo":  "51368"
+    },
+    {
+        "nome":  "HORTIFRUTI CABRAL ",
+        "codigo":  "51406"
+    },
+    {
+        "nome":  "CERRADO",
+        "codigo":  "51379"
     },
     {
         "nome":  "CONVENIENCIA BATUTINHAS",
@@ -96956,6 +97112,10 @@
         "codigo":  "51013"
     },
     {
+        "nome":  "MERCEARIA NS GUADALUPE",
+        "codigo":  "51370"
+    },
+    {
         "nome":  "ESTILO COMERCIAL",
         "codigo":  "51091"
     },
@@ -97004,6 +97164,18 @@
         "codigo":  "51250"
     },
     {
+        "nome":  "MERC. ESQUINA DA PRAA",
+        "codigo":  "51363"
+    },
+    {
+        "nome":  "SUP. ALENCAR",
+        "codigo":  "51356"
+    },
+    {
+        "nome":  "SP. FORTUNATO",
+        "codigo":  "51380"
+    },
+    {
         "nome":  "ROGERIO ALVES MOURA",
         "codigo":  "51135"
     },
@@ -97012,12 +97184,24 @@
         "codigo":  "50987"
     },
     {
+        "nome":  "AGRO CAOPEAO",
+        "codigo":  "51373"
+    },
+    {
         "nome":  "EMP.WR CARNES E BEBIDAS",
         "codigo":  "51087"
     },
     {
         "nome":  "HOUSE BLACK DISTRIBUIDORA",
         "codigo":  "51228"
+    },
+    {
+        "nome":  "SUP. GOIANO",
+        "codigo":  "51390"
+    },
+    {
+        "nome":  "CASA DE CARNES E SUPERMERCADO CLAUDINHO",
+        "codigo":  "51384"
     },
     {
         "nome":  "EMPORIO BEER AMARAL",
@@ -97076,6 +97260,10 @@
         "codigo":  "51283"
     },
     {
+        "nome":  "SUPERBOX LEAL",
+        "codigo":  "51359"
+    },
+    {
         "nome":  "CASA CLEAN RESOLVE",
         "codigo":  "51071"
     },
@@ -97084,8 +97272,16 @@
         "codigo":  "51249"
     },
     {
+        "nome":  "NH BEBIDA GELADA",
+        "codigo":  "51365"
+    },
+    {
         "nome":  "DUDU SUPERMERCADO",
         "codigo":  "51298"
+    },
+    {
+        "nome":  "JC DISTRIBUIDORA DE BEBIDAS",
+        "codigo":  "51338"
     },
     {
         "nome":  "MIX ESTRELA",
@@ -97100,12 +97296,24 @@
         "codigo":  "51196"
     },
     {
+        "nome":  "SUP. FAMILIA",
+        "codigo":  "51347"
+    },
+    {
         "nome":  "SELECT9",
         "codigo":  "51082"
     },
     {
         "nome":  "SUP.PIRINEUS",
         "codigo":  "51225"
+    },
+    {
+        "nome":  "DIST. DONA MARLI",
+        "codigo":  "51355"
+    },
+    {
+        "nome":  "SMART CANAA",
+        "codigo":  "51393"
     },
     {
         "nome":  "MEI KILO DISTRIBUIDORA FRIOS E GELADOS",
@@ -97192,6 +97400,10 @@
         "codigo":  "51066"
     },
     {
+        "nome":  "EMPORIO PARANA",
+        "codigo":  "51366"
+    },
+    {
         "nome":  "CASA DE CARNES PRIMICIAS",
         "codigo":  "51144"
     },
@@ -97260,6 +97472,10 @@
         "codigo":  "50997"
     },
     {
+        "nome":  "ORLA DISTRIBUIDORA DE BEBIDAS",
+        "codigo":  "51340"
+    },
+    {
         "nome":  "COML.SALES E SILVA",
         "codigo":  "51007"
     },
@@ -97312,16 +97528,32 @@
         "codigo":  "51130"
     },
     {
+        "nome":  "SUP. MUNDIAL",
+        "codigo":  "51386"
+    },
+    {
         "nome":  "EMPORIO SABOR DE CASA",
         "codigo":  "51275"
+    },
+    {
+        "nome":  "CAP DISTRIBUIDORA",
+        "codigo":  "51335"
     },
     {
         "nome":  "SELECTA 24H",
         "codigo":  "51278"
     },
     {
+        "nome":  "FLOR DO TRIGO PADARIA",
+        "codigo":  "51339"
+    },
+    {
         "nome":  "DISTR. DO REGI",
         "codigo":  "51308"
+    },
+    {
+        "nome":  "PANI FRIOS",
+        "codigo":  "51376"
     },
     {
         "nome":  "REGINA APARECIDA FURLAN SOARES",
@@ -97330,6 +97562,10 @@
     {
         "nome":  "SUNSAKI",
         "codigo":  "51229"
+    },
+    {
+        "nome":  "VERDURAO SOPHYA",
+        "codigo":  "51398"
     },
     {
         "nome":  "DIST.CARDOSO",
@@ -97346,6 +97582,10 @@
     {
         "nome":  "TOP BEER",
         "codigo":  "51230"
+    },
+    {
+        "nome":  "KOMPLETO COMERCIO DE BEBIDAS",
+        "codigo":  "51387"
     },
     {
         "nome":  "DIST.AVENIDA",
@@ -97376,12 +97616,20 @@
         "codigo":  "51332"
     },
     {
+        "nome":  "EMPORIO MAX",
+        "codigo":  "51403"
+    },
+    {
         "nome":  "PRECO BOM",
         "codigo":  "51194"
     },
     {
         "nome":  "SUP. FAMILIA",
         "codigo":  "51313"
+    },
+    {
+        "nome":  "SUPERMERCADO CONFIANCA",
+        "codigo":  "51375"
     },
     {
         "nome":  "JARAGUA EMBALAGENS",
@@ -97468,6 +97716,10 @@
         "codigo":  "42642"
     },
     {
+        "nome":  "IDEAL SUPERMERCADO",
+        "codigo":  "51396"
+    },
+    {
         "nome":  "EMPORIO DO BELO",
         "codigo":  "51191"
     },
@@ -97478,6 +97730,10 @@
     {
         "nome":  "PALOMA ASSIS MAIA",
         "codigo":  "51157"
+    },
+    {
+        "nome":  "SERRA SUPERMERCADO",
+        "codigo":  "51394"
     },
     {
         "nome":  "SUP. LAR FELIZ",
@@ -97492,6 +97748,10 @@
         "codigo":  "51321"
     },
     {
+        "nome":  "SUP. PONTO CERTO",
+        "codigo":  "51401"
+    },
+    {
         "nome":  "BEM BARATO ATACADISTA",
         "codigo":  "51005"
     },
@@ -97502,6 +97762,10 @@
     {
         "nome":  "AGROPECUARIA, ELETR. E HIDRA. FELIPE",
         "codigo":  "51312"
+    },
+    {
+        "nome":  "MOREIRA SUPERMERCADO",
+        "codigo":  "51345"
     },
     {
         "nome":  "BAR RODOVIARIA",
@@ -97516,12 +97780,20 @@
         "codigo":  "51224"
     },
     {
+        "nome":  "NOVO COMERCIAL FERREIRA",
+        "codigo":  "51383"
+    },
+    {
         "nome":  "SUP.MILAO",
         "codigo":  "51296"
     },
     {
         "nome":  "SUP.DONA GI",
         "codigo":  "51120"
+    },
+    {
+        "nome":  "GOIAS AMENDOAS",
+        "codigo":  "51352"
     },
     {
         "nome":  "MERCEARIA DO RESOLVE",
@@ -97534,6 +97806,10 @@
     {
         "nome":  "MADE IN ROCA",
         "codigo":  "51310"
+    },
+    {
+        "nome":  "COMERCIAL JF",
+        "codigo":  "51405"
     },
     {
         "nome":  "SALERNO MERCEARIA E HORTIFRUTI",
@@ -97556,6 +97832,10 @@
         "codigo":  "51329"
     },
     {
+        "nome":  "BRAZZA COZINHA",
+        "codigo":  "51399"
+    },
+    {
         "nome":  "SUPER RIGONATO",
         "codigo":  "51128"
     },
@@ -97566,6 +97846,10 @@
     {
         "nome":  "GRUPO MAX",
         "codigo":  "51000"
+    },
+    {
+        "nome":  "MACARIO SUPERMERCADO",
+        "codigo":  "51346"
     },
     {
         "nome":  "O VENDAO",
@@ -97580,6 +97864,14 @@
         "codigo":  "51184"
     },
     {
+        "nome":  "COML.E BEBIDAS GELADA DO BETO",
+        "codigo":  "51348"
+    },
+    {
+        "nome":  "MERCADO SIMPRAO",
+        "codigo":  "51388"
+    },
+    {
         "nome":  "SUP. CAPITAL",
         "codigo":  "51330"
     },
@@ -97588,7 +97880,7 @@
         "codigo":  "51115"
     },
     {
-        "nome":  "SUP.RODRIGUES 04",
+        "nome":  "PADARIA OURO BRANCO",
         "codigo":  "51049"
     },
     {
@@ -97606,6 +97898,10 @@
     {
         "nome":  "MERCANTIL",
         "codigo":  "51160"
+    },
+    {
+        "nome":  "DIST. C CARVALHO",
+        "codigo":  "51374"
     },
     {
         "nome":  "SUP.SANTANA",
