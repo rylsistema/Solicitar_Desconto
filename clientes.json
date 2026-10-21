@@ -16328,7 +16328,7 @@
         "codigo":  "342"
     },
     {
-        "nome":  "MERCAFRUTAS ",
+        "nome":  "MERCAFRUTAS",
         "codigo":  "13060"
     },
     {
@@ -52568,7 +52568,7 @@
         "codigo":  "27765"
     },
     {
-        "nome":  "COML. SANDES ",
+        "nome":  "COML. SANDES",
         "codigo":  "27961"
     },
     {
@@ -66108,7 +66108,7 @@
         "codigo":  "30940"
     },
     {
-        "nome":  "SUP. LEAO ",
+        "nome":  "SUP. LEAO",
         "codigo":  "30945"
     },
     {
@@ -96288,6 +96288,10 @@
         "codigo":  "51080"
     },
     {
+        "nome":  "HORTIFRUTI CENTRAL",
+        "codigo":  "51412"
+    },
+    {
         "nome":  "ADEGA NORDESTE",
         "codigo":  "51274"
     },
@@ -96608,6 +96612,10 @@
         "codigo":  "51369"
     },
     {
+        "nome":  "MIX LIMPEZA",
+        "codigo":  "51410"
+    },
+    {
         "nome":  "19.653.217 ERIKA JORDAN DA SILVA SOUZA",
         "codigo":  "51012"
     },
@@ -96658,6 +96666,10 @@
     {
         "nome":  "SUP. CANDANGO",
         "codigo":  "51354"
+    },
+    {
+        "nome":  "DISTRIBUIDORA SANTA MARIA",
+        "codigo":  "51414"
     },
     {
         "nome":  "BENDITO CAFE",
@@ -96976,6 +96988,10 @@
         "codigo":  "51299"
     },
     {
+        "nome":  "MEGA DISTRIBUIDORA DE BEBIDAS",
+        "codigo":  "51411"
+    },
+    {
         "nome":  "STOP BEER",
         "codigo":  "51042"
     },
@@ -97016,7 +97032,7 @@
         "codigo":  "51368"
     },
     {
-        "nome":  "HORTIFRUTI CABRAL ",
+        "nome":  "HORTIFRUTI CABRAL",
         "codigo":  "51406"
     },
     {
@@ -97312,6 +97328,10 @@
         "codigo":  "51355"
     },
     {
+        "nome":  "MERCADAO LARISSA",
+        "codigo":  "51409"
+    },
+    {
         "nome":  "SMART CANAA",
         "codigo":  "51393"
     },
@@ -97322,6 +97342,10 @@
     {
         "nome":  "ROMANATO ALIMENTOS",
         "codigo":  "51307"
+    },
+    {
+        "nome":  "MERCADINHO FAMILIAR ",
+        "codigo":  "51413"
     },
     {
         "nome":  "COML.CONQUISTA",
@@ -97342,6 +97366,10 @@
     {
         "nome":  "NORDESTE MIX",
         "codigo":  "51170"
+    },
+    {
+        "nome":  "MERCADINHO J.A",
+        "codigo":  "51408"
     },
     {
         "nome":  "COML.PAIS \u0026 FILHOS",
@@ -97474,6 +97502,10 @@
     {
         "nome":  "ORLA DISTRIBUIDORA DE BEBIDAS",
         "codigo":  "51340"
+    },
+    {
+        "nome":  "SUP. GOMES",
+        "codigo":  "51407"
     },
     {
         "nome":  "COML.SALES E SILVA",
