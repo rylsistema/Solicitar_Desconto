@@ -2864,10 +2864,6 @@
         "codigo":  "22749"
     },
     {
-        "nome":  "TOTE SUPERMERCADO",
-        "codigo":  "22751"
-    },
-    {
         "nome":  "CARTORIO DO REGISTRO DE IMOVEIS E ANEXOS",
         "codigo":  "34460"
     },
@@ -23692,6 +23688,14 @@
         "codigo":  "17328"
     },
     {
+        "nome":  "SUP. PLANALTO",
+        "codigo":  "51419"
+    },
+    {
+        "nome":  "COMERCIAL MIRANDA",
+        "codigo":  "51428"
+    },
+    {
         "nome":  "MERC. MARKES",
         "codigo":  "22567"
     },
@@ -42444,7 +42448,7 @@
         "codigo":  "35993"
     },
     {
-        "nome":  "CRISTAL SUPERMECADOS ",
+        "nome":  "CRISTAL SUPERMECADOS",
         "codigo":  "25203"
     },
     {
@@ -48544,10 +48548,6 @@
         "codigo":  "26668"
     },
     {
-        "nome":  "SUP. BARBOSA CONCORDIA",
-        "codigo":  "26669"
-    },
-    {
         "nome":  "SUP.MEGA POPULAR",
         "codigo":  "46999"
     },
@@ -48812,7 +48812,7 @@
         "codigo":  "47741"
     },
     {
-        "nome":  "CRISTAL SUPERMERCADO ",
+        "nome":  "CRISTAL SUPERMERCADO",
         "codigo":  "26740"
     },
     {
@@ -54644,7 +54644,7 @@
         "codigo":  "32978"
     },
     {
-        "nome":  "QUIOSQUE BATE PAPO ",
+        "nome":  "QUIOSQUE BATE PAPO",
         "codigo":  "30027"
     },
     {
@@ -59548,7 +59548,7 @@
         "codigo":  "29388"
     },
     {
-        "nome":  "MERC. E GAS ALVORADA",
+        "nome":  "SUP. E GAS ALVORADA",
         "codigo":  "29963"
     },
     {
@@ -60400,7 +60400,7 @@
         "codigo":  "29087"
     },
     {
-        "nome":  "COML. CAMPEAO ",
+        "nome":  "COML. CAMPEAO",
         "codigo":  "29208"
     },
     {
@@ -63708,7 +63708,7 @@
         "codigo":  "30165"
     },
     {
-        "nome":  "LANCHE DO MAGRAO ",
+        "nome":  "LANCHE DO MAGRAO",
         "codigo":  "30169"
     },
     {
@@ -66156,7 +66156,7 @@
         "codigo":  "30951"
     },
     {
-        "nome":  "SUP. TEIXEIRA ",
+        "nome":  "SUP. TEIXEIRA",
         "codigo":  "30953"
     },
     {
@@ -66288,7 +66288,7 @@
         "codigo":  "30887"
     },
     {
-        "nome":  "MERCOFRIO POLICARPO ",
+        "nome":  "MERCOFRIO POLICARPO",
         "codigo":  "30954"
     },
     {
@@ -69328,7 +69328,7 @@
         "codigo":  "32891"
     },
     {
-        "nome":  "CRISTAL SUPERMERCADOS ",
+        "nome":  "CRISTAL SUPERMERCADOS",
         "codigo":  "31552"
     },
     {
@@ -74684,7 +74684,7 @@
         "codigo":  "34084"
     },
     {
-        "nome":  "COML. NOVA OPCAO ",
+        "nome":  "COML. NOVA OPCAO",
         "codigo":  "34091"
     },
     {
@@ -96088,7 +96088,7 @@
         "codigo":  "49115"
     },
     {
-        "nome":  "MERCEARIA MEDRADO ",
+        "nome":  "MERCEARIA MEDRADO",
         "codigo":  "49116"
     },
     {
@@ -96508,6 +96508,10 @@
         "codigo":  "51391"
     },
     {
+        "nome":  "SUP. BARBOSA CONCORDIA",
+        "codigo":  "26669"
+    },
+    {
         "nome":  "MG SPORTES",
         "codigo":  "51104"
     },
@@ -96568,6 +96572,10 @@
         "codigo":  "51227"
     },
     {
+        "nome":  "HOTBEL VAREJO",
+        "codigo":  "51420"
+    },
+    {
         "nome":  "CASA DE CARNES PREMIUM",
         "codigo":  "51127"
     },
@@ -96594,6 +96602,10 @@
     {
         "nome":  "SAFRA CLEAN",
         "codigo":  "51096"
+    },
+    {
+        "nome":  "MERCEARIA PRADOS",
+        "codigo":  "51427"
     },
     {
         "nome":  "VILLA EXPRESS",
@@ -96668,7 +96680,7 @@
         "codigo":  "51354"
     },
     {
-        "nome":  "DISTRIBUIDORA SANTA MARIA",
+        "nome":  "DISTRIB. SANTA MARIA",
         "codigo":  "51414"
     },
     {
@@ -96826,6 +96838,10 @@
     {
         "nome":  "CONVENIENCIA CAMINHO DO LAGO",
         "codigo":  "51222"
+    },
+    {
+        "nome":  "REDE K",
+        "codigo":  "51415"
     },
     {
         "nome":  "SUP.BRASIL(GSA-SANTA LUZIA)",
@@ -97220,6 +97236,10 @@
         "codigo":  "51384"
     },
     {
+        "nome":  "MERCADO SUL NORTE",
+        "codigo":  "51417"
+    },
+    {
         "nome":  "EMPORIO BEER AMARAL",
         "codigo":  "51063"
     },
@@ -97348,6 +97368,10 @@
         "codigo":  "51413"
     },
     {
+        "nome":  "LEONARDO RODRIGUES ROMANO",
+        "codigo":  "51429"
+    },
+    {
         "nome":  "COML.CONQUISTA",
         "codigo":  "51162"
     },
@@ -97386,6 +97410,10 @@
     {
         "nome":  "PONTUAL SUPERMERCADOS (REDE AMIGA)",
         "codigo":  "21285"
+    },
+    {
+        "nome":  "REDE BATISTA - LJ 04",
+        "codigo":  "51423"
     },
     {
         "nome":  "MASTER BEER CONVENIENCIA",
@@ -97436,6 +97464,10 @@
         "codigo":  "51144"
     },
     {
+        "nome":  "CL SUPERMERCADOS",
+        "codigo":  "51424"
+    },
+    {
         "nome":  "MIL AGRO ALIMENTOS",
         "codigo":  "51212"
     },
@@ -97484,6 +97516,10 @@
         "codigo":  "51079"
     },
     {
+        "nome":  "ALX CUSTON",
+        "codigo":  "51425"
+    },
+    {
         "nome":  "SUPER PRECO BAIXO",
         "codigo":  "51116"
     },
@@ -97524,6 +97560,10 @@
         "codigo":  "51179"
     },
     {
+        "nome":  "SULLPER PAO PANIF.",
+        "codigo":  "51421"
+    },
+    {
         "nome":  "FRUTARIA OUVIDOR",
         "codigo":  "51168"
     },
@@ -97550,6 +97590,10 @@
     {
         "nome":  "BEM QUERER",
         "codigo":  "51109"
+    },
+    {
+        "nome":  "TOTE SUPERMERCADO",
+        "codigo":  "22751"
     },
     {
         "nome":  "SUP. MAIS VOCE II",
@@ -97636,6 +97680,10 @@
         "codigo":  "51218"
     },
     {
+        "nome":  "VAMIX",
+        "codigo":  "51426"
+    },
+    {
         "nome":  "BENDITO SABOR",
         "codigo":  "51323"
     },
@@ -97646,6 +97694,10 @@
     {
         "nome":  "4 PATAS PET SHOP",
         "codigo":  "51332"
+    },
+    {
+        "nome":  "CASA DA RACAO E CIA",
+        "codigo":  "51418"
     },
     {
         "nome":  "EMPORIO MAX",
@@ -97752,6 +97804,10 @@
         "codigo":  "51396"
     },
     {
+        "nome":  "HIPER BOM JESUS",
+        "codigo":  "51416"
+    },
+    {
         "nome":  "EMPORIO DO BELO",
         "codigo":  "51191"
     },
@@ -97770,6 +97826,10 @@
     {
         "nome":  "SUP. LAR FELIZ",
         "codigo":  "51088"
+    },
+    {
+        "nome":  "ESPETINHO DA JESA",
+        "codigo":  "51422"
     },
     {
         "nome":  "DANIEL ALTO CENTER",
